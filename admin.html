@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FF Tracker — Admin Panel</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #0a0c14;
+    --bg-card: rgba(255,255,255,0.04);
+    --bg-card-hover: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.08);
+    --border-bright: rgba(255,255,255,0.15);
+    --accent: #ff6b2b;
+    --accent2: #ff9f1c;
+    --accent-glow: rgba(255,107,43,0.4);
+    --gold: #ffd700;
+    --green: #00e676;
+    --red: #ff1744;
+    --text-primary: #f0f2ff;
+    --text-secondary: #8892b0;
+    --text-muted: #4a5568;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 20%, rgba(255,107,43,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(255,159,28,0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ===== PIN OVERLAY ===== */
+  #pinOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,12,20,0.97);
+    backdrop-filter: blur(20px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pin-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,107,43,0.3);
+    border-radius: 24px;
+    padding: 48px 40px;
+    text-align: center;
+    max-width: 380px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(255,107,43,0.1);
+  }
+
+  .pin-icon { font-size: 3rem; margin-bottom: 16px; }
+
+  .pin-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+  }
+
+  .pin-sub {
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    margin-bottom: 28px;
+  }
+
+  .pin-input {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 12px;
+    text-align: center;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+  }
+
+  .pin-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(255,107,43,0.1);
+  }
+
+  .pin-input.error { border-color: var(--red); animation: shake 0.3s ease; }
+
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+  }
+
+  .pin-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 20px var(--accent-glow);
+    transition: all 0.2s;
+  }
+
+  .pin-btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+  .pin-error { color: var(--red); font-size: 0.78rem; margin-top: 12px; font-weight: 600; min-height: 20px; }
+
+  /* ===== HEADER ===== */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,12,20,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 20px;
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 0;
+  }
+
+  .logo { display: flex; align-items: center; gap: 12px; }
+
+  .logo-icon {
+    width: 38px; height: 38px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 4px 15px var(--accent-glow);
+  }
+
+  .logo-text {
+    font-size: 1.1rem; font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .logo-sub {
+    font-size: 0.62rem; color: var(--text-secondary);
+    font-weight: 400; display: block; margin-top: -3px;
+    -webkit-text-fill-color: var(--text-secondary);
+  }
+
+  .header-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .export-btn {
+    padding: 9px 18px;
+    background: linear-gradient(135deg, #00c853, #00e676);
+    border: none;
+    border-radius: 10px;
+    color: #0a0c14;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s;
+    box-shadow: 0 4px 14px rgba(0,230,118,0.3);
+    letter-spacing: 0.3px;
+  }
+
+  .export-btn:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+  .reset-btn {
+    padding: 9px 16px;
+    background: rgba(255,23,68,0.12);
+    border: 1px solid rgba(255,23,68,0.3);
+    color: var(--red);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .reset-btn:hover { background: rgba(255,23,68,0.22); box-shadow: 0 4px 12px rgba(255,23,68,0.2); }
+
+  /* ===== MAIN ===== */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== EXPORT GUIDE BANNER ===== */
+  .guide-banner {
+    background: rgba(255,107,43,0.07);
+    border: 1px solid rgba(255,107,43,0.2);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .guide-icon { font-size: 1.6rem; flex-shrink: 0; }
+
+  .guide-text h3 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--accent2);
+    margin-bottom: 4px;
+  }
+
+  .guide-text p {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .guide-text code {
+    background: rgba(255,255,255,0.1);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--accent2);
+  }
+
+  /* ===== PROGRESS BAR ===== */
+  .progress-wrap {
+    margin-bottom: 28px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 22px;
+  }
+
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .progress-label { font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); }
+  .progress-count { font-size: 0.85rem; font-weight: 700; color: var(--accent); }
+
+  .progress-bar-bg {
+    background: rgba(255,255,255,0.06);
+    border-radius: 100px;
+    height: 8px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 100px;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px var(--accent-glow);
+  }
+
+  /* ===== SECTION TITLE ===== */
+  .section-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--accent), transparent);
+  }
+
+  /* ===== FIXTURES GRID ===== */
+  .fixtures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 18px;
+  }
+
+  /* ===== MATCH CARD ===== */
+  .match-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .match-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .match-card:hover { background: var(--bg-card-hover); border-color: var(--border-bright); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .match-card:hover::before { opacity: 1; }
+  .match-card.saved { border-color: rgba(0,230,118,0.25); }
+  .match-card.saved::before { opacity: 1; background: linear-gradient(90deg, var(--green), #00b0ff); }
+
+  .match-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+
+  .match-number {
+    font-size: 0.7rem; font-weight: 700; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 1.5px;
+    background: rgba(255,107,43,0.1); padding: 4px 10px;
+    border-radius: 20px; border: 1px solid rgba(255,107,43,0.2);
+  }
+
+  .match-status { font-size: 0.68rem; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
+  .match-status.pending { background: rgba(255,255,255,0.05); color: var(--text-muted); border: 1px solid var(--border); }
+  .match-status.completed { background: rgba(0,230,118,0.1); color: var(--green); border: 1px solid rgba(0,230,118,0.2); }
+
+  .match-teams { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; gap: 8px; }
+  .team-name-display { font-size: 0.82rem; font-weight: 700; text-align: center; flex: 1; line-height: 1.3; }
+  .vs-badge { font-size: 0.75rem; font-weight: 800; color: var(--accent); background: rgba(255,107,43,0.1); border: 1px solid rgba(255,107,43,0.2); padding: 5px 10px; border-radius: 8px; }
+
+  .form-row { display: flex; gap: 10px; margin-bottom: 14px; }
+  .form-group { flex: 1; display: flex; flex-direction: column; gap: 5px; }
+
+  label { font-size: 0.68rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.8px; }
+
+  select, input[type="number"] {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82rem;
+    padding: 9px 11px;
+    transition: all 0.2s;
+    width: 100%;
+  }
+
+  select {
+    appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238892b0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 11px center; padding-right: 30px;
+  }
+
+  select:focus, input:focus { outline: none; border-color: var(--accent); background: rgba(255,107,43,0.06); box-shadow: 0 0 0 3px rgba(255,107,43,0.1); }
+  select option { background: #1a1d2e; }
+
+  .kills-section { margin-bottom: 14px; }
+
+  .kills-label {
+    font-size: 0.68rem; font-weight: 700; color: var(--text-secondary);
+    text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .kills-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .kills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+
+  .kill-input-wrap { display: flex; flex-direction: column; gap: 3px; }
+  .kill-player-label { font-size: 0.65rem; color: var(--text-muted); font-weight: 500; }
+
+  .save-btn {
+    width: 100%; padding: 11px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none; border-radius: var(--radius-sm);
+    color: white; font-family: 'Poppins', sans-serif;
+    font-size: 0.82rem; font-weight: 700; cursor: pointer;
+    transition: all 0.25s; letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px var(--accent-glow); margin-top: 2px;
+  }
+
+  .save-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px var(--accent-glow); filter: brightness(1.1); }
+
+  .divider { height: 1px; background: var(--border); margin: 12px 0; }
+
+  /* ===== TOAST ===== */
+  .toast {
+    position: fixed; bottom: 28px; right: 20px;
+    background: rgba(0,230,118,0.15); border: 1px solid rgba(0,230,118,0.3);
+    color: var(--green); padding: 11px 18px; border-radius: 12px;
+    font-size: 0.82rem; font-weight: 600; z-index: 9998;
+    backdrop-filter: blur(10px); transform: translateX(120%);
+    transition: transform 0.3s ease;
+  }
+
+  .toast.show { transform: translateX(0); }
+  .toast.error { background: rgba(255,23,68,0.15); border-color: rgba(255,23,68,0.3); color: var(--red); }
+
+  @media (max-width: 600px) {
+    .header-inner { flex-direction: column; align-items: flex-start; }
+    .fixtures-grid { grid-template-columns: 1fr; }
+    .form-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== PIN OVERLAY ===== -->
+<div id="pinOverlay">
+  <div class="pin-box">
+    <div class="pin-icon">🔐</div>
+    <div class="pin-title">Admin Access</div>
+    <p class="pin-sub">Enter your PIN to manage match results</p>
+    <input class="pin-input" type="password" id="pinInput" maxlength="6" placeholder="••••" inputmode="numeric">
+    <button class="pin-btn" onclick="checkPin()">Unlock Panel</button>
+    <div class="pin-error" id="pinError"></div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">🔥</div>
+      <div>
+        <div class="logo-text">FF TRACKER — ADMIN</div>
+        <span class="logo-sub">Free Fire Tournament Manager</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="export-btn" onclick="exportJSON()">⬇ Export & Download JSON</button>
+      <button class="reset-btn" onclick="resetTournament()">⚠ Reset All</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main>
+
+  <!-- GUIDE BANNER -->
+  <div class="guide-banner">
+    <div class="guide-icon">📋</div>
+    <div class="guide-text">
+      <h3>How to publish live results</h3>
+      <p>
+        1. Save your match results below &nbsp;→&nbsp;
+        2. Click <strong>Export &amp; Download JSON</strong> &nbsp;→&nbsp;
+        3. Upload <code>data.json</code> to your GitHub repo &nbsp;→&nbsp;
+        4. Share <code>index.html</code> link — viewers see live standings instantly! 🚀
+      </p>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <div class="progress-header">
+      <span class="progress-label">🏆 Tournament Progress</span>
+      <span class="progress-count" id="progressCount">0 / 12 matches completed</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <div class="section-title">🎮 Match Fixtures</div>
+  <div class="fixtures-grid" id="fixturesGrid"></div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== CONFIG — CHANGE PIN HERE ===== */
+const ADMIN_PIN = '1234';
+
+/* ===== TEAM & PLAYER DATA ===== */
+const TEAMS = {
+  'Destroyer':           ['Saitama', 'Rolex', 'Inox'],
+  'Alaravidum Ambalais': ['Sanji', 'Joker', 'Sneaky'],
+  'Loot Govindha':       ['Shiva', 'Orton', 'Danvishnu'],
+  'Omlaka Gangster':     ['Toxic Grueee', 'TG God', 'Sura']
+};
+
+const MATCHES = [
+  { id: 1,  teamA: 'Destroyer',           teamB: 'Loot Govindha' },
+  { id: 2,  teamA: 'Alaravidum Ambalais', teamB: 'Omlaka Gangster' },
+  { id: 3,  teamA: 'Loot Govindha',       teamB: 'Alaravidum Ambalais' },
+  { id: 4,  teamA: 'Omlaka Gangster',     teamB: 'Destroyer' },
+  { id: 5,  teamA: 'Destroyer',           teamB: 'Alaravidum Ambalais' },
+  { id: 6,  teamA: 'Loot Govindha',       teamB: 'Omlaka Gangster' },
+  { id: 7,  teamA: 'Loot Govindha',       teamB: 'Destroyer' },
+  { id: 8,  teamA: 'Omlaka Gangster',     teamB: 'Alaravidum Ambalais' },
+  { id: 9,  teamA: 'Alaravidum Ambalais', teamB: 'Loot Govindha' },
+  { id: 10, teamA: 'Destroyer',           teamB: 'Omlaka Gangster' },
+  { id: 11, teamA: 'Alaravidum Ambalais', teamB: 'Destroyer' },
+  { id: 12, teamA: 'Omlaka Gangster',     teamB: 'Loot Govindha' }
+];
+
+/* ===== PIN CHECK ===== */
+function checkPin() {
+  const val = document.getElementById('pinInput').value.trim();
+  if (val === ADMIN_PIN) {
+    document.getElementById('pinOverlay').style.display = 'none';
+    buildFixtures();
+    updateProgress();
+  } else {
+    const inp = document.getElementById('pinInput');
+    inp.classList.add('error');
+    document.getElementById('pinError').textContent = 'Wrong PIN. Try again.';
+    setTimeout(() => inp.classList.remove('error'), 400);
+    inp.value = '';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('pinInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') checkPin();
+  });
+});
+
+/* ===== STORAGE ===== */
+function loadData() {
+  try { return JSON.parse(localStorage.getItem('ff_admin_results') || '{}'); }
+  catch(e) { return {}; }
+}
+function saveData(d) { localStorage.setItem('ff_admin_results', JSON.stringify(d)); }
+
+let matchResults = loadData();
+
+/* ===== SAFE ID ===== */
+const safeId = (mid, p) => 'kill-' + mid + '-' + p.replace(/\s+/g,'_').replace(/[^a-zA-Z0-9_-]/g,'');
+
+/* ===== BUILD FIXTURES ===== */
+function buildFixtures() {
+  const grid = document.getElementById('fixturesGrid');
+  grid.innerHTML = '';
+
+  MATCHES.forEach(match => {
+    const saved = matchResults[match.id] || null;
+    const card = document.createElement('div');
+    card.className = 'match-card' + (saved ? ' saved' : '');
+    card.id = 'match-card-' + match.id;
+
+    const playersA = TEAMS[match.teamA];
+    const playersB = TEAMS[match.teamB];
+
+    const killsA = playersA.map(p => `
+      <div class="kill-input-wrap">
+        <span class="kill-player-label">${p}</span>
+        <input type="number" min="0" max="99" value="${saved ? (saved.kills[p]||0) : 0}" id="${safeId(match.id,p)}" placeholder="0">
+      </div>`).join('');
+
+    const killsB = playersB.map(p => `
+      <div class="kill-input-wrap">
+        <span class="kill-player-label">${p}</span>
+        <input type="number" min="0" max="99" value="${saved ? (saved.kills[p]||0) : 0}" id="${safeId(match.id,p)}" placeholder="0">
+      </div>`).join('');
+
+    card.innerHTML = `
+      <div class="match-header">
+        <span class="match-number">Match ${match.id}</span>
+        <span class="match-status ${saved?'completed':'pending'}" id="status-${match.id}">
+          ${saved ? '✓ Done' : '⏳ Pending'}
+        </span>
+      </div>
+      <div class="match-teams">
+        <div class="team-name-display">${match.teamA}</div>
+        <div class="vs-badge">VS</div>
+        <div class="team-name-display">${match.teamB}</div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Winner</label>
+          <select id="winner-${match.id}">
+            <option value="">-- Select --</option>
+            <option value="${match.teamA}" ${saved&&saved.winner===match.teamA?'selected':''}>${match.teamA}</option>
+            <option value="${match.teamB}" ${saved&&saved.winner===match.teamB?'selected':''}>${match.teamB}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Rounds</label>
+          <input type="number" min="1" max="99" id="rounds-${match.id}" value="${saved?saved.rounds:''}" placeholder="e.g. 5">
+        </div>
+      </div>
+      <div class="kills-section">
+        <div class="kills-label">${match.teamA}</div>
+        <div class="kills-grid">${killsA}</div>
+      </div>
+      <div class="divider"></div>
+      <div class="kills-section">
+        <div class="kills-label">${match.teamB}</div>
+        <div class="kills-grid">${killsB}</div>
+      </div>
+      <button class="save-btn" onclick="saveMatch(${match.id},'${match.teamA}','${match.teamB}')">
+        💾 Save Match
+      </button>`;
+    grid.appendChild(card);
+  });
+}
+
+/* ===== SAVE MATCH ===== */
+function saveMatch(matchId, teamA, teamB) {
+  const winner = document.getElementById('winner-'+matchId).value;
+  const rounds = parseInt(document.getElementById('rounds-'+matchId).value) || 0;
+  if (!winner) { showToast('Please select a winner!', true); return; }
+
+  const kills = {};
+  [...TEAMS[teamA], ...TEAMS[teamB]].forEach(p => {
+    kills[p] = parseInt(document.getElementById(safeId(matchId,p)).value) || 0;
+  });
+
+  matchResults[matchId] = {
+    winner,
+    loser: winner === teamA ? teamB : teamA,
+    rounds, kills, teamA, teamB,
+    savedAt: new Date().toISOString()
+  };
+
+  saveData(matchResults);
+
+  /* Update card UI */
+  document.getElementById('match-card-'+matchId).classList.add('saved');
+  const st = document.getElementById('status-'+matchId);
+  st.className = 'match-status completed';
+  st.textContent = '✓ Done';
+
+  updateProgress();
+  showToast('Match ' + matchId + ' saved! Don\'t forget to export JSON 📤');
+}
+
+/* ===== PROGRESS ===== */
+function updateProgress() {
+  const done = Object.keys(matchResults).length;
+  const total = MATCHES.length;
+  document.getElementById('progressCount').textContent = `${done} / ${total} matches completed`;
+  document.getElementById('progressFill').style.width = ((done/total)*100) + '%';
+}
+
+/* ===== EXPORT JSON ===== */
+function exportJSON() {
+  /* Build the full data payload that index.html / public page will read */
+  const payload = {
+    exportedAt: new Date().toISOString(),
+    teams: TEAMS,
+    matches: MATCHES,
+    results: matchResults
+  };
+
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url;
+  a.download = 'data.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('✅ data.json downloaded! Upload it to GitHub now.');
+}
+
+/* ===== RESET ===== */
+function resetTournament() {
+  if (!confirm('⚠️ Reset ALL match data? This cannot be undone!')) return;
+  matchResults = {};
+  localStorage.removeItem('ff_admin_results');
+  buildFixtures();
+  updateProgress();
+  showToast('Tournament reset!');
+}
+
+/* ===== TOAST ===== */
+function showToast(msg, isError=false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast' + (isError?' error':'') + ' show';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>
