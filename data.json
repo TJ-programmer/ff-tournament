@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-21T11:13:44.979Z",
+  "exportedAt": "2026-02-22T18:56:40.300Z",
   "teams": {
     "Destroyer": [
       "Saitama",
@@ -99,7 +99,23 @@
       },
       "teamA": "Destroyer",
       "teamB": "Loot Govindha",
-      "savedAt": "2026-02-21T11:12:37.702Z"
+      "savedAt": "2026-02-22T18:56:26.817Z"
+    },
+    "2": {
+      "winner": "Omlaka Gangster",
+      "loser": "Alaravidum Ambalais",
+      "rounds": 3,
+      "kills": {
+        "Sanji": 13,
+        "Joker": 4,
+        "Sneaky": 5,
+        "Toxic Grueee": 8,
+        "TG God": 6,
+        "Sura": 8
+      },
+      "teamA": "Alaravidum Ambalais",
+      "teamB": "Omlaka Gangster",
+      "savedAt": "2026-02-22T18:54:22.165Z"
     },
     "3": {
       "winner": "Alaravidum Ambalais",
@@ -115,7 +131,7 @@
       },
       "teamA": "Loot Govindha",
       "teamB": "Alaravidum Ambalais",
-      "savedAt": "2026-02-21T11:13:40.066Z"
+      "savedAt": "2026-02-22T18:55:13.019Z"
     }
   }
 }
