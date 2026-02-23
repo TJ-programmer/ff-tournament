@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-23T14:23:43.584Z",
+  "exportedAt": "2026-02-23T15:44:47.374Z",
   "teams": {
     "Destroyer": [
       "Saitama",
@@ -656,6 +656,60 @@
       "teamA": "Alaravidum Ambalais",
       "teamB": "Destroyer",
       "savedAt": "2026-02-23T14:23:40.202Z"
+    },
+    "12": {
+      "winner": "Omlaka Gangster",
+      "loser": "Loot Govindha",
+      "rounds": 3,
+      "stats": {
+        "Toxic Grueee": {
+          "kills": 3,
+          "deaths": 9,
+          "assists": 4,
+          "damage": 2356,
+          "hs": 0
+        },
+        "TG God": {
+          "kills": 12,
+          "deaths": 6,
+          "assists": 6,
+          "damage": 3936,
+          "hs": 16.67
+        },
+        "Sura": {
+          "kills": 11,
+          "deaths": 7,
+          "assists": 3,
+          "damage": 4001,
+          "hs": 18.18
+        },
+        "Shiva": {
+          "kills": 10,
+          "deaths": 8,
+          "assists": 8,
+          "damage": 4982,
+          "hs": 20
+        },
+        "Orton": {
+          "kills": 5,
+          "deaths": 10,
+          "assists": 4,
+          "damage": 3187,
+          "hs": 20
+        },
+        "Danvishnu": {
+          "kills": 5,
+          "deaths": 10,
+          "assists": 4,
+          "damage": 2508,
+          "hs": 14.29
+        }
+      },
+      "teamA": "Omlaka Gangster",
+      "teamB": "Loot Govindha",
+      "savedAt": "2026-02-23T15:44:35.370Z"
     }
-  }
+  },
+  "playoffs": {},
+  "playoffsUnlocked": true
 }
