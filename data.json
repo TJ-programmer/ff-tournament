@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-23T05:01:49.552Z",
+  "exportedAt": "2026-02-23T05:22:42.853Z",
   "teams": {
     "Destroyer": [
       "Saitama",
@@ -102,21 +102,21 @@
           "deaths": 8,
           "assists": 7,
           "damage": 4947,
-          "hs": 0
+          "hs": 22.22
         },
         "Inox": {
           "kills": 8,
           "deaths": 7,
           "assists": 6,
           "damage": 2831,
-          "hs": 0
+          "hs": 25
         },
         "Shiva": {
           "kills": 9,
           "deaths": 10,
           "assists": 2,
           "damage": 4743,
-          "hs": 0
+          "hs": 33.33
         },
         "Orton": {
           "kills": 9,
@@ -135,7 +135,7 @@
       },
       "teamA": "Destroyer",
       "teamB": "Loot Govindha",
-      "savedAt": "2026-02-23T04:52:06.622Z"
+      "savedAt": "2026-02-23T05:22:41.418Z"
     },
     "2": {
       "winner": "Omlaka Gangster",
@@ -187,7 +187,7 @@
       },
       "teamA": "Alaravidum Ambalais",
       "teamB": "Omlaka Gangster",
-      "savedAt": "2026-02-23T04:57:17.485Z"
+      "savedAt": "2026-02-23T05:22:39.011Z"
     },
     "3": {
       "winner": "Alaravidum Ambalais",
@@ -239,7 +239,59 @@
       },
       "teamA": "Loot Govindha",
       "teamB": "Alaravidum Ambalais",
-      "savedAt": "2026-02-23T05:01:02.004Z"
+      "savedAt": "2026-02-23T05:22:37.147Z"
+    },
+    "4": {
+      "winner": "Destroyer",
+      "loser": "Omlaka Gangster",
+      "rounds": 4,
+      "stats": {
+        "Toxic Grueee": {
+          "kills": 5,
+          "deaths": 10,
+          "assists": 0,
+          "damage": 2844,
+          "hs": 40
+        },
+        "TG God": {
+          "kills": 4,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 2390,
+          "hs": 25
+        },
+        "Sura": {
+          "kills": 6,
+          "deaths": 8,
+          "assists": 0,
+          "damage": 2879,
+          "hs": 0
+        },
+        "Saitama": {
+          "kills": 10,
+          "deaths": 5,
+          "assists": 3,
+          "damage": 3324,
+          "hs": 10
+        },
+        "Rolex": {
+          "kills": 9,
+          "deaths": 4,
+          "assists": 6,
+          "damage": 3960,
+          "hs": 22.22
+        },
+        "Inox": {
+          "kills": 6,
+          "deaths": 6,
+          "assists": 2,
+          "damage": 2035,
+          "hs": 0
+        }
+      },
+      "teamA": "Omlaka Gangster",
+      "teamB": "Destroyer",
+      "savedAt": "2026-02-23T05:22:35.226Z"
     }
   }
 }
