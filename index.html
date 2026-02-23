@@ -6,138 +6,167 @@
 <title>Free Fire Tournament — Live Scoreboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:#0a0c14; --card:rgba(255,255,255,0.04); --card-h:rgba(255,255,255,0.07);
-    --b:rgba(255,255,255,0.08); --bb:rgba(255,255,255,0.15);
-    --a:#ff6b2b; --a2:#ff9f1c; --ag:rgba(255,107,43,0.35);
-    --gold:#ffd700; --goldg:rgba(255,215,0,0.25);
-    --g:#00e676; --gg:rgba(0,230,118,0.2);
-    --r:#ff1744; --rg:rgba(255,23,68,0.2);
-    --bl:#2979ff; --pu:#d500f9; --te:#00bcd4;
-    --t:#f0f2ff; --t2:#8892b0; --tm:#4a5568;
-    --rad:16px; --rads:10px; --sh:0 8px 32px rgba(0,0,0,0.4);
+  :root{
+    --bg:#0a0c14;--card:rgba(255,255,255,0.04);--card-h:rgba(255,255,255,0.07);
+    --b:rgba(255,255,255,0.08);--bb:rgba(255,255,255,0.15);
+    --a:#ff6b2b;--a2:#ff9f1c;--ag:rgba(255,107,43,0.35);
+    --gold:#ffd700;--goldg:rgba(255,215,0,0.25);
+    --g:#00e676;--gg:rgba(0,230,118,0.2);
+    --r:#ff1744;--rg:rgba(255,23,68,0.2);
+    --bl:#2979ff;--pu:#d500f9;--te:#00bcd4;
+    --t:#f0f2ff;--t2:#8892b0;--tm:#4a5568;
+    --rad:16px;--rads:10px;--sh:0 8px 32px rgba(0,0,0,0.4);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--t);min-height:100vh;overflow-x:hidden}
-  body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 15% 15%,rgba(255,107,43,0.07) 0%,transparent 50%),radial-gradient(ellipse at 85% 85%,rgba(255,159,28,0.05) 0%,transparent 50%),radial-gradient(ellipse at 50% 0%,rgba(0,230,118,0.03) 0%,transparent 40%);pointer-events:none;z-index:0}
+  body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 15% 15%,rgba(255,107,43,.07) 0%,transparent 50%),radial-gradient(ellipse at 85% 85%,rgba(255,159,28,.05) 0%,transparent 50%),radial-gradient(ellipse at 50% 0%,rgba(0,230,118,.03) 0%,transparent 40%);pointer-events:none;z-index:0}
 
   /* HEADER */
-  header{position:sticky;top:0;z-index:100;background:rgba(10,12,20,0.93);backdrop-filter:blur(24px);border-bottom:1px solid var(--b);padding:0 20px}
+  header{position:sticky;top:0;z-index:100;background:rgba(10,12,20,.93);backdrop-filter:blur(24px);border-bottom:1px solid var(--b);padding:0 20px}
   .hi{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:13px 0}
   .logo{display:flex;align-items:center;gap:12px}
   .li{width:42px;height:42px;background:linear-gradient(135deg,var(--a),var(--a2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 16px var(--ag);animation:pulse 3s ease-in-out infinite}
-  @keyframes pulse{0%,100%{box-shadow:0 4px 16px var(--ag)}50%{box-shadow:0 4px 28px var(--ag),0 0 40px rgba(255,107,43,0.15)}}
+  @keyframes pulse{0%,100%{box-shadow:0 4px 16px var(--ag)}50%{box-shadow:0 4px 28px var(--ag),0 0 40px rgba(255,107,43,.15)}}
   .lt{font-size:1.15rem;font-weight:800;background:linear-gradient(135deg,var(--a),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-  .ls{font-size:0.62rem;color:var(--t2);font-weight:400;display:block;margin-top:-3px;-webkit-text-fill-color:var(--t2)}
+  .ls{font-size:.62rem;color:var(--t2);font-weight:400;display:block;margin-top:-3px;-webkit-text-fill-color:var(--t2)}
 
-  .tabs{display:flex;gap:4px;background:rgba(255,255,255,0.04);border:1px solid var(--b);border-radius:12px;padding:4px}
-  .tb{padding:7px 18px;border:none;background:transparent;color:var(--t2);font-family:'Poppins',sans-serif;font-size:0.8rem;font-weight:600;cursor:pointer;border-radius:8px;transition:all 0.25s;letter-spacing:0.3px}
-  .tb:hover{color:var(--t);background:rgba(255,255,255,0.05)}
+  .tabs{display:flex;gap:4px;background:rgba(255,255,255,.04);border:1px solid var(--b);border-radius:12px;padding:4px}
+  .tb{padding:7px 14px;border:none;background:transparent;color:var(--t2);font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:600;cursor:pointer;border-radius:8px;transition:all .25s;white-space:nowrap}
+  .tb:hover{color:var(--t);background:rgba(255,255,255,.05)}
   .tb.active{background:linear-gradient(135deg,var(--a),var(--a2));color:#fff;box-shadow:0 4px 12px var(--ag)}
+  .tb.gold-tab.active{background:linear-gradient(135deg,#f9a825,var(--gold));box-shadow:0 4px 12px rgba(255,215,0,.35)}
+  .tb.hidden-tab{display:none}
 
-  .live{display:flex;align-items:center;gap:7px;background:rgba(0,230,118,0.1);border:1px solid rgba(0,230,118,0.25);border-radius:100px;padding:5px 12px;font-size:0.72rem;font-weight:700;color:var(--g)}
+  .live{display:flex;align-items:center;gap:7px;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.25);border-radius:100px;padding:5px 12px;font-size:.72rem;font-weight:700;color:var(--g)}
   .ld{width:8px;height:8px;background:var(--g);border-radius:50%;animation:blink 1.4s ease-in-out infinite;box-shadow:0 0 8px var(--g)}
-  @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.7)}}
-  .lu{font-size:0.68rem;color:var(--tm);font-weight:500;margin-top:2px}
+  @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+  .lu{font-size:.68rem;color:var(--tm);font-weight:500;margin-top:2px}
 
   /* MAIN */
-  main{max-width:1180px;margin:0 auto;padding:28px 20px;position:relative;z-index:1}
-  .sec{display:none;animation:fadeIn 0.35s ease}
+  main{max-width:1180px;margin:0 auto;padding:26px 20px;position:relative;z-index:1}
+  .sec{display:none;animation:fadeIn .35s ease}
   .sec.active{display:block}
   @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
   /* HERO CARDS */
-  .hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:26px}
-  .hc{background:var(--card);border:1px solid var(--b);border-radius:var(--rad);padding:18px;text-align:center;transition:all 0.3s;position:relative;overflow:hidden}
+  .hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:13px;margin-bottom:24px}
+  .hc{background:var(--card);border:1px solid var(--b);border-radius:var(--rad);padding:17px;text-align:center;transition:all .3s;position:relative;overflow:hidden}
   .hc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a),var(--a2))}
   .hc:hover{background:var(--card-h);transform:translateY(-2px)}
-  .hnum{font-size:2.2rem;font-weight:900;background:linear-gradient(135deg,var(--a),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:5px}
-  .hlbl{font-size:0.68rem;font-weight:600;color:var(--t2);text-transform:uppercase;letter-spacing:1px}
+  .hnum{font-size:2.1rem;font-weight:900;background:linear-gradient(135deg,var(--a),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:5px}
+  .hlbl{font-size:.67rem;font-weight:600;color:var(--t2);text-transform:uppercase;letter-spacing:1px}
 
   /* SECTION TITLE */
-  .stitle{font-size:1.35rem;font-weight:800;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+  .stitle{font-size:1.3rem;font-weight:800;margin-bottom:16px;display:flex;align-items:center;gap:12px}
   .stitle::after{content:'';flex:1;height:2px;background:linear-gradient(to right,var(--a),transparent)}
+  .stitle.gold-title::after{background:linear-gradient(to right,var(--gold),transparent)}
 
-  /* TABLE WRAPPER */
-  .tw{overflow-x:auto;border-radius:var(--rad);border:1px solid var(--b);box-shadow:var(--sh);margin-bottom:32px}
-  table{width:100%;border-collapse:collapse;font-size:0.88rem}
-  thead{background:rgba(255,107,43,0.07)}
-  th{padding:14px 16px;text-align:left;font-size:0.68rem;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid var(--b);white-space:nowrap}
-  td{padding:13px 16px;border-bottom:1px solid rgba(255,255,255,0.04);font-weight:500;white-space:nowrap}
+  /* TABLE */
+  .tw{overflow-x:auto;border-radius:var(--rad);border:1px solid var(--b);box-shadow:var(--sh);margin-bottom:28px}
+  table{width:100%;border-collapse:collapse;font-size:.87rem}
+  thead{background:rgba(255,107,43,.07)}
+  th{padding:13px 15px;text-align:left;font-size:.67rem;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid var(--b);white-space:nowrap}
+  td{padding:12px 15px;border-bottom:1px solid rgba(255,255,255,.04);font-weight:500;white-space:nowrap}
   tr:last-child td{border-bottom:none}
-  tbody tr{transition:background 0.2s;animation:rowIn 0.4s ease both}
-  tbody tr:hover{background:rgba(255,255,255,0.025)}
+  tbody tr{transition:background .2s;animation:rowIn .4s ease both}
+  tbody tr:hover{background:rgba(255,255,255,.025)}
   @keyframes rowIn{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}
 
-  /* STANDINGS */
-  .rt{background:rgba(0,230,118,0.04)!important;border-left:3px solid var(--g)}
-  .rb{background:rgba(255,23,68,0.04)!important;border-left:3px solid var(--r)}
+  /* row highlights */
+  .rt{background:rgba(0,230,118,.04)!important;border-left:3px solid var(--g)}
+  .rb{background:rgba(255,23,68,.04)!important;border-left:3px solid var(--r)}
+  .r1row{background:rgba(255,215,0,.05)!important;border-left:3px solid var(--gold)}
 
-  .pbadge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;font-weight:800;font-size:0.82rem}
-  .pt{background:rgba(0,230,118,0.15);color:var(--g)}
-  .pb2{background:rgba(255,23,68,0.15);color:var(--r)}
-  .pm{background:rgba(255,255,255,0.07);color:var(--t2)}
+  /* badges */
+  .pbadge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;font-weight:800;font-size:.82rem}
+  .pt2{background:rgba(0,230,118,.15);color:var(--g)}.pb2{background:rgba(255,23,68,.15);color:var(--r)}.pm{background:rgba(255,255,255,.07);color:var(--t2)}
+  .pts{font-size:.98rem;font-weight:800;color:var(--a)}
+  .rbadge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;font-weight:800;font-size:.82rem}
+  .rg{background:rgba(255,215,0,.2);color:var(--gold);box-shadow:0 0 14px var(--goldg)}
+  .rs{background:rgba(192,192,192,.15);color:#c0c0c0}.rbr{background:rgba(205,127,50,.15);color:#cd7f32}.rd{background:rgba(255,255,255,.07);color:var(--t2)}
+  .tbadge{font-size:.68rem;padding:2px 8px;border-radius:20px;font-weight:600;background:rgba(255,255,255,.07);color:var(--t2)}
 
-  .pts{font-size:1rem;font-weight:800;color:var(--a)}
-
-  /* mini bar */
+  /* mini bars */
   .bar{display:inline-flex;align-items:center;gap:6px}
-  .bbg{width:50px;height:5px;background:rgba(255,255,255,0.07);border-radius:100px;overflow:hidden;display:inline-block}
+  .bbg{width:46px;height:5px;background:rgba(255,255,255,.07);border-radius:100px;overflow:hidden;display:inline-block}
   .bf{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--a),var(--a2))}
-  .bf.g{background:linear-gradient(90deg,#00c853,var(--g))}
-  .bf.r{background:var(--r)}
-  .bf.bl{background:var(--bl)}
-  .bf.pu{background:var(--pu)}
-  .bf.te{background:var(--te)}
+  .bf.g{background:linear-gradient(90deg,#00c853,var(--g))}.bf.r{background:var(--r)}.bf.bl{background:var(--bl)}.bf.pu{background:var(--pu)}.bf.te{background:var(--te)}
 
-  /* PLAYER STATS TABLE */
-  .r1row{background:rgba(255,215,0,0.05)!important;border-left:3px solid var(--gold)}
-  .rbadge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;font-weight:800;font-size:0.82rem}
-  .rg{background:rgba(255,215,0,0.2);color:var(--gold);box-shadow:0 0 14px var(--goldg)}
-  .rs{background:rgba(192,192,192,0.15);color:#c0c0c0}
-  .rbr{background:rgba(205,127,50,0.15);color:#cd7f32}
-  .rd{background:rgba(255,255,255,0.07);color:var(--t2)}
-
+  /* rating */
   .rating{display:inline-flex;align-items:center;gap:6px}
-  .rval{font-size:1rem;font-weight:800}
-  .rbar{width:60px;height:7px;background:rgba(255,255,255,0.07);border-radius:100px;overflow:hidden}
+  .rval{font-size:.97rem;font-weight:800}
+  .rbar{width:55px;height:6px;background:rgba(255,255,255,.07);border-radius:100px;overflow:hidden}
   .rbarfill{height:100%;border-radius:100px}
 
-  .tbadge{font-size:0.68rem;padding:2px 8px;border-radius:20px;font-weight:600;background:rgba(255,255,255,0.07);color:var(--t2)}
+  /* BRACKET */
+  .brack-wrap{overflow-x:auto;margin-bottom:28px;padding:4px 0}
+  .brack{display:flex;gap:6px;align-items:center;min-width:700px;padding:8px 0}
+  .bcol{flex:1;display:flex;flex-direction:column;gap:7px}
+  .bc{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;flex:0 0 44px}
+  .bline{width:1px;flex:1;min-height:20px;background:rgba(255,255,255,.1)}
+  .blbl{font-size:.58rem;font-weight:700;padding:3px 6px;border-radius:6px;white-space:nowrap}
+  .bteam{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:9px 12px}
+  .bteam.w{border-color:rgba(0,230,118,.3);background:rgba(0,230,118,.05)}
+  .bteam.l{border-color:rgba(255,23,68,.25);background:rgba(255,23,68,.04)}
+  .bteam.gld{border-color:rgba(255,215,0,.35);background:rgba(255,215,0,.06)}
+  .bteam-lbl{font-size:.54rem;color:var(--t2);font-weight:600;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px}
+  .bteam-nm{font-size:.8rem;font-weight:700}
 
-  /* FIXTURES VIEW */
+  /* PLAYOFF BRACKET SECTION */
+  .pl-phase{background:rgba(255,215,0,.04);border:1px solid rgba(255,215,0,.12);border-radius:14px;padding:18px 20px;margin-bottom:20px}
+  .pl-phase-title{font-size:.8rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
+  .pl-match-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}
+  .pl-team{padding:10px 14px;border-radius:10px;text-align:center;font-weight:700;font-size:.85rem;border:1px solid var(--b)}
+  .pl-team.win{background:rgba(0,230,118,.08);border-color:rgba(0,230,118,.3);color:var(--g)}
+  .pl-team.los{background:rgba(255,23,68,.05);border-color:rgba(255,23,68,.2);color:var(--r);opacity:.7}
+  .pl-team.tbd{background:rgba(255,255,255,.03);color:var(--tm)}
+  .pl-vs{font-size:.75rem;font-weight:800;color:var(--a);background:rgba(255,107,43,.1);border:1px solid rgba(255,107,43,.2);padding:5px 10px;border-radius:8px}
+  .pl-result{margin-top:10px;font-size:.75rem;color:var(--t2);text-align:center}
+  .pl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:8px}
+
+  /* CHAMPION */
+  .champ-banner{background:linear-gradient(135deg,rgba(255,215,0,.1),rgba(255,159,28,.07));border:1px solid rgba(255,215,0,.35);border-radius:18px;padding:40px;text-align:center;margin-bottom:28px;box-shadow:0 0 60px rgba(255,215,0,.08);animation:champIn .6s ease both}
+  @keyframes champIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}
+
+  /* FIXTURES CARDS */
   .fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
-  .fcard{background:var(--card);border-radius:14px;padding:16px 18px;transition:all 0.3s;border:1px solid var(--b)}
+  .fcard{background:var(--card);border-radius:14px;padding:15px 17px;transition:all .3s;border:1px solid var(--b)}
   .fcard:hover{background:var(--card-h);transform:translateY(-1px)}
-  .fcard.done{border-color:rgba(0,230,118,0.2);border-left:3px solid var(--g)}
-  .fcard.pending{border-left:3px solid rgba(255,107,43,0.3)}
+  .fcard.done{border-color:rgba(0,230,118,.2);border-left:3px solid var(--g)}
+  .fcard.pldone{border-color:rgba(255,215,0,.25);border-left:3px solid var(--gold)}
+
+  /* PHASE TABS */
+  .phase-tabs{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
+  .ptab{padding:6px 14px;border:1px solid var(--b);background:rgba(255,255,255,.04);color:var(--t2);font-family:'Poppins',sans-serif;font-size:.75rem;font-weight:600;cursor:pointer;border-radius:8px;transition:all .25s}
+  .ptab:hover{color:var(--t);border-color:var(--bb)}
+  .ptab.active{background:linear-gradient(135deg,var(--a),var(--a2));color:#fff;border-color:transparent}
+  .ptab.active.gold{background:linear-gradient(135deg,#f9a825,var(--gold));border-color:transparent}
+  .phase-content{display:none}.phase-content.active{display:block;animation:fadeIn .3s ease}
 
   /* LOADING / ERROR */
-  .loading{text-align:center;padding:80px 20px;color:var(--tm)}
-  .spinner{width:44px;height:44px;border:3px solid var(--b);border-top-color:var(--a);border-radius:50%;animation:spin 0.85s linear infinite;margin:0 auto 16px}
+  .loading{text-align:center;padding:70px 20px;color:var(--tm)}
+  .spinner{width:44px;height:44px;border:3px solid var(--b);border-top-color:var(--a);border-radius:50%;animation:spin .85s linear infinite;margin:0 auto 16px}
   @keyframes spin{to{transform:rotate(360deg)}}
-  .loading p{font-size:0.85rem}
-
-  .errbx{text-align:center;padding:50px 20px;background:rgba(255,23,68,0.05);border:1px solid rgba(255,23,68,0.15);border-radius:var(--rad)}
-  .errbx h3{color:var(--r);font-size:0.95rem;margin-bottom:10px}
-  .errbx p{font-size:0.78rem;color:var(--t2);line-height:1.7}
-  .errbx code{background:rgba(255,255,255,0.08);padding:1px 6px;border-radius:4px;color:var(--a2);font-size:0.75rem}
-
+  .loading p{font-size:.84rem}
+  .errbx{text-align:center;padding:50px 20px;background:rgba(255,23,68,.05);border:1px solid rgba(255,23,68,.15);border-radius:var(--rad)}
+  .errbx h3{color:var(--r);font-size:.95rem;margin-bottom:10px}
+  .errbx p{font-size:.78rem;color:var(--t2);line-height:1.7}
+  .errbx code{background:rgba(255,255,255,.08);padding:1px 6px;border-radius:4px;color:var(--a2);font-size:.75rem}
   .empty{text-align:center;padding:60px 20px;color:var(--tm)}
-  .empty span{display:block;font-size:3rem;margin-bottom:12px;opacity:0.4}
+  .empty span{display:block;font-size:3rem;margin-bottom:12px;opacity:.4}
 
   /* REFRESH BAR */
-  .refbar{position:fixed;bottom:0;left:0;right:0;height:3px;background:transparent;z-index:200}
+  .refbar{position:fixed;bottom:0;left:0;right:0;height:3px;z-index:200}
   .refill{height:100%;background:linear-gradient(90deg,var(--a),var(--a2));width:0%;transition:width linear}
 
   @media(max-width:650px){
     .hi{flex-direction:column;align-items:flex-start}
-    .tabs{width:100%}
-    .tb{flex:1;text-align:center;padding:7px 6px;font-size:0.74rem}
-    th,td{padding:11px 12px}
+    .tabs{width:100%;flex-wrap:wrap}
+    .tb{flex:1;text-align:center;padding:7px 6px;font-size:.72rem}
+    th,td{padding:11px 11px}
     .hero{grid-template-columns:1fr 1fr}
-    .bbg{width:36px}
-    .rbar{width:40px}
+    .bbg{width:32px}.rbar{width:38px}
+    .pl-match-row{grid-template-columns:1fr auto 1fr;gap:6px}
   }
 </style>
 </head>
@@ -147,15 +176,13 @@
   <div class="hi">
     <div class="logo">
       <div class="li">🔥</div>
-      <div>
-        <div class="lt">FF TOURNAMENT</div>
-        <span class="ls">Live Scoreboard</span>
-      </div>
+      <div><div class="lt">FF TOURNAMENT</div><span class="ls">Live Scoreboard</span></div>
     </div>
     <nav class="tabs">
-      <button class="tb active" onclick="sw('table')">🏆 Table</button>
-      <button class="tb" onclick="sw('stats')">⚡ Stats</button>
-      <button class="tb" onclick="sw('fixtures')">📋 Fixtures</button>
+      <button class="tb active"      onclick="sw('table')">🏆 Table</button>
+      <button class="tb"             onclick="sw('stats')">⚡ Stats</button>
+      <button class="tb"             onclick="sw('fixtures')">📋 Fixtures</button>
+      <button class="tb gold-tab hidden-tab" id="plTab" onclick="sw('playoffs')">🏆 Playoffs</button>
     </nav>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px">
       <div class="live"><div class="ld"></div>LIVE</div>
@@ -167,394 +194,537 @@
 <main>
   <!-- TABLE -->
   <section id="sec-table" class="sec active">
-    <div class="hero" id="hero">
-      <div class="hc"><div class="hnum" id="hMP">0</div><div class="hlbl">Matches Played</div></div>
+    <div class="hero">
+      <div class="hc"><div class="hnum" id="hMP">0</div><div class="hlbl">Matches</div></div>
       <div class="hc"><div class="hnum" id="hTeams">4</div><div class="hlbl">Teams</div></div>
       <div class="hc"><div class="hnum" id="hKills">0</div><div class="hlbl">Total Kills</div></div>
       <div class="hc"><div class="hnum" id="hDMG">0</div><div class="hlbl">Total Damage</div></div>
-      <div class="hc"><div class="hnum" id="hLeft">12</div><div class="hlbl">Matches Left</div></div>
+      <div class="hc"><div class="hnum" id="hLeft">12</div><div class="hlbl">Remaining</div></div>
     </div>
-    <div class="stitle">🏆 Points Table</div>
+    <div class="stitle">🏆 League Table</div>
     <div id="tableContent"><div class="loading"><div class="spinner"></div><p>Loading standings...</p></div></div>
   </section>
 
   <!-- STATS -->
   <section id="sec-stats" class="sec">
-    <div class="stitle">⚡ Player Leaderboard & Ratings</div>
-    <div id="statsContent"><div class="loading"><div class="spinner"></div><p>Loading stats...</p></div></div>
+    <div class="stitle">⚡ Player Ratings & Stats</div>
+    <div class="phase-tabs" id="statsPhaseTabs">
+      <button class="ptab active" onclick="swStatsPhase('league',this)">League</button>
+      <button class="ptab hidden-tab" id="statsPlTab" onclick="swStatsPhase('playoffs',this)">Playoffs</button>
+      <button class="ptab hidden-tab" id="statsAllTab" onclick="swStatsPhase('all',this)">All Combined</button>
+    </div>
+    <div class="phase-content active" id="statsLeague"><div class="loading"><div class="spinner"></div><p>Loading...</p></div></div>
+    <div class="phase-content" id="statsPlayoffs"><div class="empty"><span>🏆</span>No playoff data yet</div></div>
+    <div class="phase-content" id="statsAll"><div class="empty"><span>🔢</span>No data yet</div></div>
   </section>
 
   <!-- FIXTURES -->
   <section id="sec-fixtures" class="sec">
     <div class="stitle">📋 All Fixtures</div>
-    <div id="fixturesContent"><div class="loading"><div class="spinner"></div><p>Loading fixtures...</p></div></div>
+    <div class="phase-tabs" id="fixPhaseTabs">
+      <button class="ptab active" onclick="swFixPhase('league',this)">League (12)</button>
+      <button class="ptab hidden-tab" id="fixPlTab" onclick="swFixPhase('playoffs',this)">Playoffs</button>
+    </div>
+    <div class="phase-content active" id="fixLeague"><div class="loading"><div class="spinner"></div><p>Loading fixtures...</p></div></div>
+    <div class="phase-content" id="fixPlayoffs"><div class="empty"><span>🏆</span>Playoffs not started yet</div></div>
+  </section>
+
+  <!-- PLAYOFFS -->
+  <section id="sec-playoffs" class="sec">
+    <div id="plContent"><div class="loading"><div class="spinner"></div><p>Loading playoff data...</p></div></div>
   </section>
 </main>
 
 <div class="refbar"><div class="refill" id="refill"></div></div>
 
 <script>
-/* =====================================================
-   ⚙️ UPDATE THIS URL after pushing data.json to GitHub
-   Format: https://raw.githubusercontent.com/USERNAME/REPO/main/data.json
-   ===================================================== */
-const DATA_URL = 'https://raw.githubusercontent.com/TJ-programmer/ff-tournament/main/data.json';
-const REFRESH  = 30000; // 30 seconds
+/* ====================================================
+   CONFIG — UPDATE THIS!
+   ==================================================== */
+const DATA_URL = 'YOUR_GITHUB_RAW_URL_HERE';
+const REFRESH  = 30000;
 
-let gData = null, refreshT = null, countT = null;
+let gData=null, refreshT=null, countT=null;
 
-/* TAB */
-function sw(tab) {
+/* ====================================================
+   TAB SWITCHING
+   ==================================================== */
+function sw(tab){
   document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
   document.getElementById('sec-'+tab).classList.add('active');
   document.querySelectorAll('.tb').forEach(b=>{
-    if(b.textContent.toLowerCase().includes(tab==='table'?'table':tab==='stats'?'stat':'fix'))
+    const txt=b.textContent.toLowerCase();
+    if((tab==='table'&&txt.includes('table'))||(tab==='stats'&&txt.includes('stat'))
+      ||(tab==='fixtures'&&txt.includes('fix'))||(tab==='playoffs'&&txt.includes('playoff')))
       b.classList.add('active');
   });
 }
 
-/* FETCH */
-async function fetchData() {
+function swStatsPhase(phase,el){
+  document.querySelectorAll('#statsPhaseTabs .ptab').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.phase-content[id^="stats"]').forEach(d=>d.classList.remove('active'));
+  document.getElementById('stats'+phase.charAt(0).toUpperCase()+phase.slice(1)).classList.add('active');
+}
+
+function swFixPhase(phase,el){
+  document.querySelectorAll('#fixPhaseTabs .ptab').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.phase-content[id^="fix"]').forEach(d=>d.classList.remove('active'));
+  document.getElementById('fix'+phase.charAt(0).toUpperCase()+phase.slice(1)).classList.add('active');
+}
+
+/* ====================================================
+   FETCH
+   ==================================================== */
+async function fetchData(){
   if(DATA_URL==='YOUR_GITHUB_RAW_URL_HERE'){showConfigErr();return}
-  try {
-    const res = await fetch(DATA_URL+'?t='+Date.now());
+  try{
+    const res=await fetch(DATA_URL+'?t='+Date.now());
     if(!res.ok) throw new Error('HTTP '+res.status);
-    const d = await res.json();
-    gData = d;
-    renderAll(d);
-    setLU(d.exportedAt);
-  } catch(e) {
+    const d=await res.json();
+    gData=d; renderAll(d); setLU(d.exportedAt);
+  }catch(e){
     console.error(e);
     if(!gData) showFetchErr();
   }
 }
 
-/* RENDER ALL */
-function renderAll(d) {
+/* ====================================================
+   RENDER ALL
+   ==================================================== */
+function renderAll(d){
   renderHero(d);
   renderTable(d);
   renderStats(d);
   renderFixtures(d);
+  if(d.playoffsUnlocked) renderPlayoffs(d);
+  togglePlayoffTab(d.playoffsUnlocked);
 }
 
-/* HERO */
-function renderHero(d) {
+/* ====================================================
+   HERO STATS
+   ==================================================== */
+function renderHero(d){
   const rs=Object.values(d.results||{});
-  const done=rs.length;
-  let tk=0, tdmg=0;
+  let tk=0,tdmg=0;
   rs.forEach(r=>Object.values(r.stats||{}).forEach(s=>{tk+=s.kills||0;tdmg+=s.damage||0}));
-  document.getElementById('hMP').textContent   = done;
-  document.getElementById('hTeams').textContent= Object.keys(d.teams||{}).length;
-  document.getElementById('hKills').textContent= tk;
-  document.getElementById('hDMG').textContent  = tdmg>=1000?Math.round(tdmg/1000)+'k':tdmg;
-  document.getElementById('hLeft').textContent = (d.matches||[]).length-done;
+  const done=rs.length, total=(d.matches||[]).length;
+  document.getElementById('hMP').textContent=done;
+  document.getElementById('hTeams').textContent=Object.keys(d.teams||{}).length;
+  document.getElementById('hKills').textContent=tk;
+  document.getElementById('hDMG').textContent=tdmg>=1000?Math.round(tdmg/1000)+'k':tdmg;
+  document.getElementById('hLeft').textContent=total-done;
 }
 
-/* ========== STANDINGS TABLE ========== */
-function renderTable(d) {
-  const teams=d.teams||{}, rs=d.results||{}, n=Object.keys(teams).length;
+/* ====================================================
+   STANDINGS TABLE (with tiebreak = team kills)
+   ==================================================== */
+function computeStandings(d){
+  const teams=d.teams||{}, rs=d.results||{};
   const st={};
-  Object.keys(teams).forEach(t=>{
-    st[t]={team:t,mp:0,w:0,l:0,pts:0,kills:0,deaths:0,assists:0,damage:0,hs:[]};
-  });
-
+  Object.keys(teams).forEach(t=>{st[t]={team:t,mp:0,w:0,l:0,pts:0,kills:0,deaths:0,assists:0,damage:0,hs:[]}});
   Object.values(rs).forEach(r=>{
-    const agg=(team)=>{
-      teams[team]?.forEach(p=>{
-        const s=r.stats?.[p]||{};
-        st[team].kills   +=(s.kills  ||0);
-        st[team].deaths  +=(s.deaths ||0);
-        st[team].assists +=(s.assists||0);
-        st[team].damage  +=(s.damage ||0);
-        if(s.hs>0) st[team].hs.push(s.hs);
-      });
-    };
     st[r.winner].mp++; st[r.winner].w++; st[r.winner].pts+=2;
     st[r.loser].mp++;  st[r.loser].l++;
-    agg(r.teamA); agg(r.teamB);
+    [r.teamA,r.teamB].forEach(tm=>{
+      teams[tm]?.forEach(p=>{
+        const s=r.stats?.[p]||{};
+        st[tm].kills   +=(s.kills||0);
+        st[tm].deaths  +=(s.deaths||0);
+        st[tm].assists +=(s.assists||0);
+        st[tm].damage  +=(s.damage||0);
+        if(s.hs>0) st[tm].hs.push(s.hs);
+      });
+    });
   });
+  return Object.values(st).sort((a,b)=>b.pts-a.pts||b.kills-a.kills);
+}
 
-  const sorted=Object.values(st).sort((a,b)=>b.pts-a.pts||b.w-a.w);
-  const maxKills=Math.max(...sorted.map(x=>x.kills),1);
-  const maxDMG  =Math.max(...sorted.map(x=>x.damage),1);
+function renderTable(d){
+  const sorted=computeStandings(d);
+  const n=sorted.length;
+  const maxK=Math.max(...sorted.map(x=>x.kills),1);
+  const maxD=Math.max(...sorted.map(x=>x.damage),1);
 
   let rows='';
   sorted.forEach((row,i)=>{
     const pos=i+1, isTop=pos<=2, isBot=pos>n-2;
-    const rowCls=isTop?'rt':isBot?'rb':'';
-    const posCls=isTop?'pt':isBot?'pb2':'pm';
-    const wr=row.mp>0?Math.round((row.w/row.mp)*100):0;
+    const rCls=isTop?'rt':isBot?'rb':'';
+    const pCls=isTop?'pt2':isBot?'pb2':'pm';
     const kd=row.deaths>0?(row.kills/row.deaths).toFixed(2):'∞';
     const avgK=row.mp>0?(row.kills/row.mp).toFixed(1):0;
     const avgDMG=row.mp>0?Math.round(row.damage/row.mp):0;
     const avgHS=row.hs.length>0?(row.hs.reduce((a,b)=>a+b,0)/row.hs.length).toFixed(1):0;
-    const kpct=Math.round((row.kills/maxKills)*100);
-    const dpct=Math.round((row.damage/maxDMG)*100);
-
-    rows+=`
-      <tr class="${rowCls}" style="animation-delay:${i*0.07}s">
-        <td><span class="pbadge ${posCls}">${pos}</span></td>
-        <td><strong style="font-size:0.9rem">${row.team}</strong></td>
-        <td>${row.mp}</td>
-        <td style="color:var(--g);font-weight:700">${row.w}</td>
-        <td style="color:var(--r);font-weight:700">${row.l}</td>
-        <td><span class="pts">${row.pts}</span></td>
-        <td>
-          <div class="bar">
-            <span style="font-weight:700;color:var(--a2)">${row.kills}</span>
-            <div class="bbg"><div class="bf" style="width:${kpct}%"></div></div>
-          </div>
-        </td>
-        <td style="font-weight:600;color:var(--te)">${avgK}</td>
-        <td style="font-weight:600;color:var(--g)">${kd}</td>
-        <td>
-          <div class="bar">
-            <span style="font-weight:600;color:var(--pu)">${avgDMG}</span>
-            <div class="bbg"><div class="bf pu" style="width:${dpct}%"></div></div>
-          </div>
-        </td>
-        <td style="color:var(--t2);font-weight:600">${row.assists}</td>
-        <td style="color:var(--te);font-weight:600">${avgHS}%</td>
-        <td style="color:var(--t2);font-weight:600">${wr}%</td>
-      </tr>`;
+    const wr=row.mp>0?Math.round((row.w/row.mp)*100):0;
+    const kpct=Math.round((row.kills/maxK)*100);
+    const dpct=Math.round((row.damage/maxD)*100);
+    const tieNote=isTop&&sorted[0].pts===sorted[1].pts?'<span style="font-size:.55rem;color:var(--tm);margin-left:4px">(kills tb)</span>':'';
+    rows+=`<tr class="${rCls}" style="animation-delay:${i*.07}s">
+      <td><span class="pbadge ${pCls}">${pos}</span></td>
+      <td><strong style="font-size:.9rem">${row.team}</strong>${tieNote}</td>
+      <td>${row.mp}</td>
+      <td style="color:var(--g);font-weight:700">${row.w}</td>
+      <td style="color:var(--r);font-weight:700">${row.l}</td>
+      <td><span class="pts">${row.pts}</span></td>
+      <td><div class="bar"><span style="font-weight:700;color:var(--a2)">${row.kills}</span><div class="bbg"><div class="bf" style="width:${kpct}%"></div></div></div></td>
+      <td style="color:var(--te);font-weight:600">${avgK}</td>
+      <td style="color:${parseFloat(kd)>=2?'var(--g)':parseFloat(kd)>=1?'var(--a2)':'var(--r)'};font-weight:700">${kd}</td>
+      <td><div class="bar"><span style="color:var(--pu);font-weight:600">${avgDMG}</span><div class="bbg"><div class="bf pu" style="width:${dpct}%"></div></div></div></td>
+      <td style="color:var(--t2)">${row.assists}</td>
+      <td style="color:var(--te)">${avgHS}%</td>
+      <td style="color:var(--t2)">${wr}%</td>
+    </tr>`;
   });
 
   document.getElementById('tableContent').innerHTML=`
-    <div class="tw">
-      <table>
-        <thead><tr>
-          <th>Pos</th><th>Team</th><th>MP</th><th>W</th><th>L</th><th>Pts</th>
-          <th>Total K</th><th>Avg K</th><th>K/D</th><th>Avg DMG</th>
-          <th>Assists</th><th>Avg HS%</th><th>Win%</th>
-        </tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
+    <div class="tw"><table>
+      <thead><tr>
+        <th>Pos</th><th>Team</th><th>MP</th><th>W</th><th>L</th><th>Pts</th>
+        <th>Kills</th><th>Avg K</th><th>K/D</th><th>Avg DMG</th>
+        <th>Assists</th><th>HS%</th><th>Win%</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+    <div style="font-size:.7rem;color:var(--tm);padding:4px 2px">
+      * If points are equal, teams ranked by total kills (tiebreaker)
     </div>`;
 }
 
-/* ========== PLAYER RATING ========== */
-/*
-  Rating (0-10): all metrics normalised per-match vs best player
-  Kills/match    25% | K/D ratio      20% | Damage/match   20%
-  Headshot%      15% | Assists/match  10% | Survival       10%
-
-  Uses per-match averages so late-joined players are not unfairly
-  penalised. HS% normalised vs best (not raw /100).
-*/
-function calcRating(p, all) {
-  const norm = (v, arr) => Math.min(v / Math.max(...arr, 0.001), 1);
-  const kpm  = p.mp > 0 ? p.kills   / p.mp : 0;
-  const dpm  = p.mp > 0 ? p.damage  / p.mp : 0;
-  const apm  = p.mp > 0 ? p.assists / p.mp : 0;
-  const depm = p.mp > 0 ? p.deaths  / p.mp : 0;
-  const allKpm  = all.map(x => x.mp>0 ? x.kills/x.mp   : 0);
-  const allDpm  = all.map(x => x.mp>0 ? x.damage/x.mp  : 0);
-  const allApm  = all.map(x => x.mp>0 ? x.assists/x.mp : 0);
-  const allDepm = all.map(x => x.mp>0 ? x.deaths/x.mp  : 0);
-  const score =
-    norm(kpm,  allKpm)         * 0.25 +
-    norm(p.kd, all.map(x=>x.kd)) * 0.20 +
-    norm(dpm,  allDpm)         * 0.20 +
-    norm(p.hs, all.map(x=>x.hs)) * 0.15 +
-    norm(apm,  allApm)         * 0.10 +
-    (1 - norm(depm, allDepm))  * 0.10;
-  return parseFloat((score * 10).toFixed(2));
+/* ====================================================
+   PLAYER RATING FORMULA
+   ==================================================== */
+function calcRating(p, all){
+  const norm=(v,arr)=>Math.min(v/Math.max(...arr,0.001),1);
+  const kpm =p.mp>0?p.kills/p.mp:0;
+  const dpm =p.mp>0?p.damage/p.mp:0;
+  const apm =p.mp>0?p.assists/p.mp:0;
+  const depm=p.mp>0?p.deaths/p.mp:0;
+  const allKpm =all.map(x=>x.mp>0?x.kills/x.mp:0);
+  const allDpm =all.map(x=>x.mp>0?x.damage/x.mp:0);
+  const allApm =all.map(x=>x.mp>0?x.assists/x.mp:0);
+  const allDepm=all.map(x=>x.mp>0?x.deaths/x.mp:0);
+  const score=
+    norm(kpm, allKpm)            *0.25+
+    norm(p.kd,all.map(x=>x.kd)) *0.20+
+    norm(dpm, allDpm)            *0.20+
+    norm(p.hs,all.map(x=>x.hs)) *0.15+
+    norm(apm, allApm)            *0.10+
+    (1-norm(depm,allDepm))       *0.10;
+  return parseFloat((score*10).toFixed(2));
 }
 
-function ratingColor(r) {
-  if(r>=8)  return '#00e676';
-  if(r>=6)  return '#ff9f1c';
-  if(r>=4)  return '#2979ff';
-  return '#8892b0';
-}
+function ratingColor(r){return r>=8?'#00e676':r>=6?'#ff9f1c':r>=4?'#2979ff':'#8892b0'}
 
-/* ========== STATS PAGE ========== */
-function renderStats(d) {
-  const teams=d.teams||{}, rs=d.results||{};
+/* Aggregate player stats from a set of match results */
+function aggregatePlayers(teams, matchResultsArr){
   const players={};
   Object.entries(teams).forEach(([team,pl])=>{
-    pl.forEach(p=>{players[p]={player:p,team,kills:0,deaths:0,assists:0,damage:0,hsArr:[],hs:0,mp:0,kd:0}});
+    pl.forEach(p=>{players[p]={player:p,team,kills:0,deaths:0,assists:0,damage:0,hsArr:[],mp:0,kd:0,hs:0}});
   });
-
-  Object.values(rs).forEach(r=>{
-    const allP=[...TEAMS_MERGED(r.teamA,r.teamB,teams)];
+  matchResultsArr.forEach(r=>{
+    const allP=[...(teams[r.teamA]||[]),...(teams[r.teamB]||[])];
     allP.forEach(p=>{
       if(!players[p])return;
       const s=r.stats?.[p]||{};
-      players[p].kills   +=(s.kills  ||0);
-      players[p].deaths  +=(s.deaths ||0);
-      players[p].assists +=(s.assists||0);
-      players[p].damage  +=(s.damage ||0);
+      players[p].kills  +=(s.kills||0);
+      players[p].deaths +=(s.deaths||0);
+      players[p].assists+=(s.assists||0);
+      players[p].damage +=(s.damage||0);
       if((s.hs||0)>0) players[p].hsArr.push(s.hs);
       players[p].mp++;
     });
   });
-
-  const arr=Object.values(players).map(p=>{
-    p.hs   = p.hsArr.length?parseFloat((p.hsArr.reduce((a,b)=>a+b,0)/p.hsArr.length).toFixed(1)):0;
-    p.kd   = p.deaths>0?parseFloat((p.kills/p.deaths).toFixed(2)):p.kills;
-    p.avgK = p.mp>0?parseFloat((p.kills/p.mp).toFixed(1)):0;
-    p.avgD = p.mp>0?parseFloat((p.damage/p.mp).toFixed(0)):0;
+  return Object.values(players).map(p=>{
+    p.hs  =p.hsArr.length?parseFloat((p.hsArr.reduce((a,b)=>a+b,0)/p.hsArr.length).toFixed(1)):0;
+    p.kd  =p.deaths>0?parseFloat((p.kills/p.deaths).toFixed(2)):p.kills;
+    p.avgK=p.mp>0?parseFloat((p.kills/p.mp).toFixed(1)):0;
+    p.avgD=p.mp>0?parseFloat((p.damage/p.mp).toFixed(0)):0;
     return p;
   });
+}
 
-  /* compute ratings */
-  arr.forEach(p=>{ p.rating=calcRating(p,arr); });
-
-  /* sort by rating desc */
+function buildStatsTable(arr, containerId){
+  arr.forEach(p=>{p.rating=calcRating(p,arr)});
   arr.sort((a,b)=>b.rating-a.rating||b.kills-a.kills);
-
-  if(arr.every(p=>p.kills===0&&p.damage===0)) {
-    document.getElementById('statsContent').innerHTML=empty('No stats yet. Save some matches!');
+  if(arr.every(p=>p.kills===0&&p.damage===0)){
+    document.getElementById(containerId).innerHTML=`<div class="empty"><span>🎮</span>No data yet</div>`;
     return;
   }
-
   const maxK=Math.max(...arr.map(x=>x.kills),1);
   const maxD=Math.max(...arr.map(x=>x.damage),1);
   const maxA=Math.max(...arr.map(x=>x.assists),1);
-
   let rows='';
   arr.forEach((p,i)=>{
     const rank=i+1;
     const bc=rank===1?'rg':rank===2?'rs':rank===3?'rbr':'rd';
     const rowCls=rank===1?'r1row':'';
-    const rem=rank===1?'👑':rank;
     const col=ratingColor(p.rating);
+    const rpct=Math.round((p.rating/10)*100);
     const kpct=Math.round((p.kills/maxK)*100);
     const dpct=Math.round((p.damage/maxD)*100);
     const apct=Math.round((p.assists/maxA)*100);
-    const rpct=Math.round((p.rating/10)*100);
-
-    rows+=`
-      <tr class="${rowCls}" style="animation-delay:${i*0.05}s">
-        <td><span class="rbadge ${bc}">${rem}</span></td>
-        <td><strong>${p.player}</strong></td>
-        <td><span class="tbadge">${p.team}</span></td>
-        <td>
-          <div class="rating">
-            <span class="rval" style="color:${col}">${p.rating}</span>
-            <div class="rbar"><div class="rbarfill" style="width:${rpct}%;background:${col}"></div></div>
-          </div>
-        </td>
-        <td>
-          <div class="bar">
-            <span style="font-weight:700;color:var(--a2)">${p.kills}</span>
-            <div class="bbg"><div class="bf" style="width:${kpct}%"></div></div>
-          </div>
-        </td>
-        <td style="color:${p.kd>=2?'var(--g)':p.kd>=1?'var(--a2)':'var(--r)'};font-weight:700">${p.kd}</td>
-        <td style="color:var(--r);font-weight:600">${p.deaths}</td>
-        <td>
-          <div class="bar">
-            <span style="font-weight:600;color:var(--pu)">${p.damage}</span>
-            <div class="bbg"><div class="bf pu" style="width:${dpct}%"></div></div>
-          </div>
-        </td>
-        <td style="color:var(--te);font-weight:600">${p.hs}%</td>
-        <td>
-          <div class="bar">
-            <span style="font-weight:600;color:var(--bl)">${p.assists}</span>
-            <div class="bbg"><div class="bf bl" style="width:${apct}%"></div></div>
-          </div>
-        </td>
-        <td style="color:var(--t2);font-weight:600">${p.avgK}</td>
-        <td style="color:var(--t2);font-weight:600">${p.mp}</td>
-      </tr>`;
+    rows+=`<tr class="${rowCls}" style="animation-delay:${i*.05}s">
+      <td><span class="rbadge ${bc}">${rank===1?'👑':rank}</span></td>
+      <td><strong>${p.player}</strong></td>
+      <td><span class="tbadge">${p.team}</span></td>
+      <td><div class="rating"><span class="rval" style="color:${col}">${p.rating}</span><div class="rbar"><div class="rbarfill" style="width:${rpct}%;background:${col}"></div></div></div></td>
+      <td><div class="bar"><span style="font-weight:700;color:var(--a2)">${p.kills}</span><div class="bbg"><div class="bf" style="width:${kpct}%"></div></div></div></td>
+      <td style="color:${p.kd>=2?'var(--g)':p.kd>=1?'var(--a2)':'var(--r)'};font-weight:700">${p.kd}</td>
+      <td style="color:var(--r)">${p.deaths}</td>
+      <td><div class="bar"><span style="color:var(--pu);font-weight:600">${p.damage}</span><div class="bbg"><div class="bf pu" style="width:${dpct}%"></div></div></div></td>
+      <td style="color:var(--te)">${p.hs}%</td>
+      <td><div class="bar"><span style="color:var(--bl)">${p.assists}</span><div class="bbg"><div class="bf bl" style="width:${apct}%"></div></div></div></td>
+      <td style="color:var(--t2)">${p.avgK}</td>
+      <td style="color:var(--t2)">${p.mp}</td>
+    </tr>`;
   });
-
-  document.getElementById('statsContent').innerHTML=`
-    <div class="tw">
-      <table>
-        <thead><tr>
-          <th>Rank</th><th>Player</th><th>Team</th>
-          <th>Rating ⭐</th><th>Kills</th><th>K/D</th><th>Deaths</th>
-          <th>Damage</th><th>HS%</th><th>Assists</th><th>Avg K</th><th>MP</th>
-        </tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-    <div style="margin-top:10px;padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid var(--b);border-radius:12px;font-size:0.72rem;color:var(--tm)">
-      ⭐ <strong style="color:var(--t2)">Rating formula:</strong>
-      Kills/match 25% · K/D 20% · Damage/match 20% · HS% (normalised) 15% · Assists/match 10% · Survival 10%
+  document.getElementById(containerId).innerHTML=`
+    <div class="tw"><table>
+      <thead><tr><th>Rank</th><th>Player</th><th>Team</th><th>Rating ⭐</th>
+      <th>Kills</th><th>K/D</th><th>Deaths</th><th>Damage</th><th>HS%</th>
+      <th>Assists</th><th>Avg K</th><th>MP</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+    <div style="margin-top:8px;padding:10px 14px;background:rgba(255,255,255,.03);border:1px solid var(--b);border-radius:10px;font-size:.7rem;color:var(--tm)">
+      ⭐ Rating: Kills/match 25% · K/D 20% · Damage/match 20% · HS% 15% · Assists/match 10% · Survival 10%
     </div>`;
 }
 
-/* ========== FIXTURES ========== */
-function renderFixtures(d) {
-  const matches=d.matches||[], rs=d.results||{};
-  if(!matches.length){document.getElementById('fixturesContent').innerHTML=empty('No fixtures yet');return}
+/* ====================================================
+   RENDER STATS (3 phases)
+   ==================================================== */
+function renderStats(d){
+  const teams=d.teams||{};
+  const leagueRs=Object.values(d.results||{});
+  const plRs=Object.values(d.playoffs||{});
+  const allRs=[...leagueRs,...plRs];
 
-  let cards='';
-  matches.forEach(m=>{
-    const sv=rs[m.id], done=!!sv;
-    const wA=done&&sv.winner===m.teamA, wB=done&&sv.winner===m.teamB;
-    const styA=done?(wA?'color:var(--g);font-weight:800':'color:var(--r);opacity:0.7'):'';
-    const styB=done?(wB?'color:var(--g);font-weight:800':'color:var(--r);opacity:0.7'):'';
-
-    let killRow='';
-    if(done&&sv.stats){
-      const plyA=(d.teams?.[m.teamA]||[]).map(p=>`<span style="font-size:0.7rem;color:var(--t2)">${p}: <strong style="color:var(--a2)">${sv.stats[p]?.kills||0}k</strong></span>`).join(' ');
-      const plyB=(d.teams?.[m.teamB]||[]).map(p=>`<span style="font-size:0.7rem;color:var(--t2)">${p}: <strong style="color:var(--a2)">${sv.stats[p]?.kills||0}k</strong></span>`).join(' ');
-      killRow=`
-        <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--b)">
-          <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px">
-            <div style="display:flex;flex-direction:column;gap:3px">${plyA}</div>
-            <div style="display:flex;flex-direction:column;gap:3px;text-align:right">${plyB}</div>
-          </div>
-          <div style="text-align:center;margin-top:8px;font-size:0.73rem;color:var(--t2)">
-            🏆 Winner: <strong style="color:var(--g)">${sv.winner}</strong>
-            ${sv.rounds?` · ${sv.rounds} rounds`:''}
-          </div>
-        </div>`;
-    }
-
-    cards+=`
-      <div class="fcard ${done?'done':'pending'}">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-          <span style="font-size:0.68rem;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:1.2px;background:rgba(255,107,43,0.1);padding:3px 9px;border-radius:20px;border:1px solid rgba(255,107,43,0.2)">Match ${m.id}</span>
-          <span style="font-size:0.67rem;font-weight:600;padding:3px 9px;border-radius:20px;background:${done?'rgba(0,230,118,0.1)':'rgba(255,255,255,0.05)'};color:${done?'var(--g)':'var(--tm)'};border:1px solid ${done?'rgba(0,230,118,0.2)':'rgba(255,255,255,0.07)'}">
-            ${done?'✓ Completed':'⏳ Pending'}
-          </span>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-          <div style="flex:1;text-align:center;font-size:0.82rem;font-weight:700;${styA}">${m.teamA}</div>
-          <div style="font-size:0.72rem;font-weight:800;color:var(--a);background:rgba(255,107,43,0.1);border:1px solid rgba(255,107,43,0.2);padding:4px 9px;border-radius:7px">VS</div>
-          <div style="flex:1;text-align:center;font-size:0.82rem;font-weight:700;${styB}">${m.teamB}</div>
-        </div>
-        ${killRow}
-      </div>`;
-  });
-  document.getElementById('fixturesContent').innerHTML=`<div class="fgrid">${cards}</div>`;
+  buildStatsTable(aggregatePlayers(teams,leagueRs),'statsLeague');
+  if(plRs.length){
+    buildStatsTable(aggregatePlayers(teams,plRs),'statsPlayoffs');
+    buildStatsTable(aggregatePlayers(teams,allRs),'statsAll');
+  }
 }
 
-/* HELPERS */
-function TEAMS_MERGED(tA,tB,teams){ return [...(teams[tA]||[]),...(teams[tB]||[])]; }
-function empty(msg){ return `<div class="empty"><span>🎮</span>${msg}</div>`; }
-function setLU(at){ const e=document.getElementById('lu'); if(!at){e.textContent='Just updated';return} const d=new Date(at); e.textContent='Updated: '+d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}); }
-function showConfigErr(){const m=`<div class="errbx"><h3>⚙️ Setup Required</h3><p>Open <code>index.html</code>, find <code>DATA_URL</code> and replace it with your GitHub raw JSON URL.<br><br><code>https://raw.githubusercontent.com/USERNAME/REPO/main/data.json</code></p></div>`;['tableContent','statsContent','fixturesContent'].forEach(id=>document.getElementById(id).innerHTML=m);document.getElementById('lu').textContent='Not configured'}
-function showFetchErr(){const m=`<div class="errbx"><h3>⚠️ Could not load data</h3><p>Make sure <code>data.json</code> is uploaded to GitHub and <code>DATA_URL</code> is correct. Retrying in 30s.</p></div>`;['tableContent','statsContent','fixturesContent'].forEach(id=>document.getElementById(id).innerHTML=m);document.getElementById('lu').textContent='Load failed'}
+/* ====================================================
+   RENDER FIXTURES
+   ==================================================== */
+function renderFixtures(d){
+  const matches=d.matches||[], rs=d.results||{};
+  let cards='';
+  matches.forEach(m=>{
+    const sv=rs[m.id]; const done=!!sv;
+    const styA=done?(sv.winner===m.teamA?'color:var(--g);font-weight:800':'color:var(--r);opacity:.7'):'';
+    const styB=done?(sv.winner===m.teamB?'color:var(--g);font-weight:800':'color:var(--r);opacity:.7'):'';
+    let killRow='';
+    if(done&&sv.stats){
+      const pA=(d.teams?.[m.teamA]||[]).map(p=>`<span style="font-size:.69rem;color:var(--t2)">${p}: <strong style="color:var(--a2)">${sv.stats[p]?.kills||0}k</strong></span>`).join(' ');
+      const pB=(d.teams?.[m.teamB]||[]).map(p=>`<span style="font-size:.69rem;color:var(--t2)">${p}: <strong style="color:var(--a2)">${sv.stats[p]?.kills||0}k</strong></span>`).join(' ');
+      killRow=`<div style="margin-top:9px;padding-top:9px;border-top:1px solid var(--b)">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:5px">
+          <div style="display:flex;flex-direction:column;gap:2px">${pA}</div>
+          <div style="display:flex;flex-direction:column;gap:2px;text-align:right">${pB}</div>
+        </div>
+        <div style="text-align:center;margin-top:7px;font-size:.72rem;color:var(--t2)">🏆 <strong style="color:var(--g)">${sv.winner}</strong>${sv.rounds?` · ${sv.rounds}R`:''}</div>
+      </div>`;
+    }
+    cards+=`<div class="fcard ${done?'done':''}">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px">
+        <span style="font-size:.67rem;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:1.2px;background:rgba(255,107,43,.1);padding:3px 9px;border-radius:20px;border:1px solid rgba(255,107,43,.2)">Match ${m.id}</span>
+        <span style="font-size:.66rem;font-weight:600;padding:3px 9px;border-radius:20px;background:${done?'rgba(0,230,118,.1)':'rgba(255,255,255,.05)'};color:${done?'var(--g)':'var(--tm)'};border:1px solid ${done?'rgba(0,230,118,.2)':'rgba(255,255,255,.07)'}">
+          ${done?'✓ Done':'⏳ Pending'}</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:7px">
+        <div style="flex:1;text-align:center;font-size:.82rem;font-weight:700;${styA}">${m.teamA}</div>
+        <div style="font-size:.72rem;font-weight:800;color:var(--a);background:rgba(255,107,43,.1);border:1px solid rgba(255,107,43,.2);padding:4px 8px;border-radius:7px">VS</div>
+        <div style="flex:1;text-align:center;font-size:.82rem;font-weight:700;${styB}">${m.teamB}</div>
+      </div>
+      ${killRow}
+    </div>`;
+  });
+  document.getElementById('fixLeague').innerHTML=`<div class="fgrid">${cards}</div>`;
+}
+
+/* ====================================================
+   RENDER PLAYOFFS SECTION
+   ==================================================== */
+function renderPlayoffs(d){
+  const cont=document.getElementById('plContent');
+  const teams=d.teams||{};
+  const seed=computeStandings(d);
+  const [s1,s2,s3,s4]=seed;
+  const pl=d.playoffs||{};
+  const q1=pl['q1']||null, e1=pl['e1']||null;
+  const e2A=q1?q1.loser:'TBD', e2B=e1?e1.winner:'TBD';
+  const e2=pl['e2']||null;
+  const finA=q1?q1.winner:'TBD', finB=e2?e2.winner:'TBD';
+  const fin=pl['final']||null;
+
+  /* helper: team box */
+  function bTeam(name,lbl,state){
+    const cls=state==='w'?' w':state==='l'?' l':state==='gld'?' gld':'';
+    const col=state==='w'?'var(--g)':state==='l'?'var(--r)':state==='gld'?'var(--gold)':'var(--t)';
+    const icon=state==='w'?'✓ ':state==='l'?'✗ ':state==='gld'?'👑 ':'';
+    return `<div class="bteam${cls}"><div class="bteam-lbl">${lbl}</div><div class="bteam-nm" style="color:${col}">${icon}${name||'TBD'}</div></div>`;
+  }
+  function bArrow(lbl,col){
+    return `<div class="bc"><div class="bline"></div><div class="blbl" style="color:${col};background:rgba(0,0,0,.3);border:1px solid ${col}40">${lbl}</div><div class="bline"></div></div>`;
+  }
+
+  /* Playoff fixture card (view-only) */
+  function plFixCard(tag,tagColor,tA,tB,sv,cssClass){
+    const done=!!sv;
+    const styA=done?(sv.winner===tA?'color:var(--g);font-weight:800':'color:var(--r);opacity:.7'):'';
+    const styB=done?(sv.winner===tB?'color:var(--g);font-weight:800':'color:var(--r);opacity:.7'):'';
+    let killRow='';
+    if(done&&sv.stats){
+      const pA=(teams[tA]||[]).map(p=>`<span style="font-size:.69rem;color:var(--t2)">${p}: <strong style="color:var(--a2)">${sv.stats[p]?.kills||0}k</strong></span>`).join(' ');
+      const pB=(teams[tB]||[]).map(p=>`<span style="font-size:.69rem;color:var(--t2)">${p}: <strong style="color:var(--a2)">${sv.stats[p]?.kills||0}k</strong></span>`).join(' ');
+      killRow=`<div style="margin-top:9px;padding-top:9px;border-top:1px solid var(--b)">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:5px">
+          <div style="display:flex;flex-direction:column;gap:2px">${pA}</div>
+          <div style="display:flex;flex-direction:column;gap:2px;text-align:right">${pB}</div>
+        </div>
+        <div style="text-align:center;margin-top:7px;font-size:.72rem;color:var(--t2)">🏆 <strong style="color:var(--g)">${sv.winner}</strong>${sv.rounds?` · ${sv.rounds}R`:''}</div>
+      </div>`;
+    }
+    return `<div class="fcard ${done?'pldone':''}">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px">
+        <span style="font-size:.67rem;font-weight:700;color:${tagColor};text-transform:uppercase;letter-spacing:1px;background:${tagColor}18;padding:3px 10px;border-radius:20px;border:1px solid ${tagColor}35">${tag}</span>
+        <span style="font-size:.66rem;font-weight:600;padding:3px 9px;border-radius:20px;background:${done?'rgba(0,230,118,.1)':'rgba(255,255,255,.05)'};color:${done?'var(--g)':'var(--tm)'};border:1px solid ${done?'rgba(0,230,118,.2)':'rgba(255,255,255,.07)'}">
+          ${done?'✓ Done':'⏳ Pending'}</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:7px">
+        <div style="flex:1;text-align:center;font-size:.82rem;font-weight:700;${styA}">${tA||'TBD'}</div>
+        <div style="font-size:.72rem;font-weight:800;color:var(--a);background:rgba(255,107,43,.1);border:1px solid rgba(255,107,43,.2);padding:4px 8px;border-radius:7px">VS</div>
+        <div style="flex:1;text-align:center;font-size:.82rem;font-weight:700;${styB}">${tB||'TBD'}</div>
+      </div>
+      ${killRow}
+    </div>`;
+  }
+
+  /* Champion banner */
+  const champHTML=fin?`<div class="champ-banner">
+    <div style="font-size:3.5rem;margin-bottom:12px">🏆</div>
+    <div style="font-size:.72rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:10px">Tournament Champion</div>
+    <div style="font-size:2.2rem;font-weight:900;background:linear-gradient(135deg,var(--gold),#fff176);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px">${fin.winner}</div>
+    <div style="font-size:.78rem;color:var(--t2)">Congratulations! 🎉</div>
+  </div>`:'';
+
+  /* seeding */
+  const seedHTML=`<div class="seed-box" style="background:rgba(255,215,0,.04);border:1px solid rgba(255,215,0,.14);border-radius:14px;padding:16px 18px;margin-bottom:20px">
+    <div style="font-size:.78rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">🎯 Seedings (by points → kills tiebreak)</div>
+    ${seed.map((t,i)=>`<div style="display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04)">
+      <div style="width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;${i<2?'background:rgba(0,230,118,.15);color:var(--g)':'background:rgba(255,23,68,.12);color:var(--r)'}">${i+1}</div>
+      <div style="flex:1;font-size:.83rem;font-weight:700">${t.team}</div>
+      <div style="font-size:.78rem;font-weight:700;color:var(--a)">${t.pts}pts</div>
+      <div style="font-size:.7rem;color:var(--t2)">⚔${t.kills}k</div>
+      <div style="font-size:.65rem;padding:2px 7px;border-radius:20px;font-weight:600;${i<2?'background:rgba(255,215,0,.1);color:var(--gold)':'background:rgba(224,64,251,.1);color:#e040fb'}">${i<2?'Q1':'E1'}</div>
+    </div>`).join('')}
+    <div style="margin-top:8px;font-size:.68rem;color:var(--tm)">* Tiebreak: equal points → ranked by total team kills</div>
+  </div>`;
+
+  /* bracket */
+  const bracketHTML=`
+    <div class="stitle gold-title" style="margin-top:4px">🗺 Bracket Flow</div>
+    <div class="brack-wrap"><div class="brack">
+      <!-- SEEDS -->
+      <div class="bcol" style="flex:0 0 145px">
+        <div style="font-size:.58rem;font-weight:700;color:rgba(0,230,118,.7);text-transform:uppercase;letter-spacing:1px;text-align:center;margin-bottom:2px">Qualifier 1</div>
+        ${bTeam(s1.team,'1st',q1?q1.winner===s1.team?'w':'l':'')}
+        ${bTeam(s2.team,'2nd',q1?q1.winner===s2.team?'w':'l':'')}
+        <div style="height:12px"></div>
+        <div style="font-size:.58rem;font-weight:700;color:rgba(255,23,68,.7);text-transform:uppercase;letter-spacing:1px;text-align:center;margin-bottom:2px">Eliminator 1</div>
+        ${bTeam(s3.team,'3rd',e1?e1.winner===s3.team?'w':'l':'')}
+        ${bTeam(s4.team,'4th',e1?e1.winner===s4.team?'w':'l':'')}
+      </div>
+      <!-- ARROWS -->
+      <div class="bcol" style="flex:0 0 46px">
+        ${bArrow('Q1','#00e676')}
+        <div style="height:12px"></div>
+        ${bArrow('E1','#ff1744')}
+      </div>
+      <!-- OUTCOMES -->
+      <div class="bcol" style="flex:0 0 150px">
+        <div class="bteam ${q1?'w':''}"><div class="bteam-lbl">Q1 Winner → Final</div><div class="bteam-nm" style="${q1?'color:var(--g)':''}">${q1?q1.winner:'⏳ TBD'}</div></div>
+        <div class="bteam"><div class="bteam-lbl">Q1 Loser → E2</div><div class="bteam-nm" style="color:var(--a2)">${q1?q1.loser:'⏳ TBD'}</div></div>
+        <div style="height:8px"></div>
+        <div class="bteam ${e1?'w':''}"><div class="bteam-lbl">E1 Winner → E2</div><div class="bteam-nm" style="${e1?'color:var(--te)':''}">${e1?e1.winner:'⏳ TBD'}</div></div>
+        <div class="bteam l"><div class="bteam-lbl">E1 Loser ❌ OUT</div><div class="bteam-nm" style="color:var(--r);opacity:.7">${e1?e1.loser:'⏳ TBD'}</div></div>
+      </div>
+      <!-- E2 ARROW -->
+      ${bArrow('E2','#00bcd4')}
+      <!-- E2 TEAMS -->
+      <div class="bcol" style="flex:0 0 145px;justify-content:center">
+        <div style="font-size:.58rem;font-weight:700;color:rgba(0,188,212,.7);text-transform:uppercase;letter-spacing:1px;text-align:center;margin-bottom:2px">Eliminator 2</div>
+        ${bTeam(e2A==='TBD'?'Q1 Loser':e2A,'Q1 Loser',e2?e2.winner===e2A?'w':'l':'')}
+        ${bTeam(e2B==='TBD'?'E1 Winner':e2B,'E1 Winner',e2?e2.winner===e2B?'w':'l':'')}
+      </div>
+      <!-- FINAL ARROW -->
+      ${bArrow('→ Final','#ffd700')}
+      <!-- FINAL BOX -->
+      <div class="bcol" style="flex:0 0 145px;justify-content:center">
+        <div class="bteam gld" style="text-align:center;padding:14px">
+          <div style="font-size:.62rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">🏆 Grand Final</div>
+          ${fin
+            ? `<div style="font-size:1rem;font-weight:900;color:var(--gold)">${fin.winner}</div><div style="font-size:.62rem;color:var(--g);margin-top:4px">🥇 CHAMPION</div>`
+            : `<div style="font-size:.78rem;font-weight:700;color:var(--t2)">${finA==='TBD'?'Q1 Winner':finA}</div>
+               <div style="font-size:.6rem;color:var(--tm);margin:3px 0">vs</div>
+               <div style="font-size:.78rem;font-weight:700;color:var(--t2)">${finB==='TBD'?'E2 Winner':finB}</div>`}
+        </div>
+      </div>
+    </div></div>`;
+
+  /* fix cards */
+  const fixHTML=`
+    <div class="stitle gold-title">📋 Playoff Fixtures</div>
+    <div class="fgrid">
+      ${plFixCard('⭐ Qualifier 1','#ffd700',s1.team,s2.team,q1,'q1')}
+      ${plFixCard('💀 Eliminator 1','#e040fb',s3.team,s4.team,e1,'e1')}
+      ${plFixCard('🔥 Eliminator 2','#00bcd4',e2A,e2B,e2,'e2')}
+      ${plFixCard('🏆 Grand Final','#ffd700',finA,finB,fin,'final')}
+    </div>`;
+
+  cont.innerHTML=champHTML+seedHTML+bracketHTML+fixHTML;
+
+  /* Also update fixtures tab */
+  document.getElementById('fixPlayoffs').innerHTML=`<div class="fgrid">
+    ${plFixCard('⭐ Q1',       '#ffd700',s1.team,s2.team,q1)}
+    ${plFixCard('💀 Elim 1',  '#e040fb',s3.team,s4.team,e1)}
+    ${plFixCard('🔥 Elim 2',  '#00bcd4',e2A,e2B,e2)}
+    ${plFixCard('🏆 Final',   '#ffd700',finA,finB,fin)}
+  </div>`;
+}
+
+/* ====================================================
+   TOGGLE PLAYOFF TAB VISIBILITY
+   ==================================================== */
+function togglePlayoffTab(show){
+  ['plTab','statsPlTab','statsAllTab','fixPlTab'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.classList.toggle('hidden-tab',!show);
+  });
+}
+
+/* ====================================================
+   HELPERS
+   ==================================================== */
+function setLU(at){const e=document.getElementById('lu');if(!at){e.textContent='Just updated';return}const d=new Date(at);e.textContent='Updated: '+d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}
+function showConfigErr(){const m=`<div class="errbx"><h3>⚙️ Setup Required</h3><p>Open <code>index.html</code>, find <code>DATA_URL</code> and replace with your GitHub raw JSON URL.<br><br><code>https://raw.githubusercontent.com/USERNAME/REPO/main/data.json</code></p></div>`;['tableContent','statsLeague','fixLeague','plContent'].forEach(id=>document.getElementById(id).innerHTML=m);document.getElementById('lu').textContent='Not configured'}
+function showFetchErr(){const m=`<div class="errbx"><h3>⚠️ Could not load data</h3><p>Make sure <code>data.json</code> is on GitHub and <code>DATA_URL</code> is correct. Retrying in 30s.</p></div>`;['tableContent','statsLeague','fixLeague','plContent'].forEach(id=>document.getElementById(id).innerHTML=m);document.getElementById('lu').textContent='Load failed'}
 
 /* REFRESH BAR */
 function startBar(){
-  const fill=document.getElementById('refill');
-  let elapsed=0;const step=300;
-  clearInterval(countT);
-  fill.style.transition='none'; fill.style.width='0%';
-  countT=setInterval(()=>{
-    elapsed+=step;
-    const pct=Math.min((elapsed/REFRESH)*100,100);
-    fill.style.transition=`width ${step}ms linear`;
-    fill.style.width=pct+'%';
-    if(elapsed>=REFRESH) clearInterval(countT);
-  },step);
+  const fill=document.getElementById('refill');let elapsed=0;const step=300;
+  clearInterval(countT);fill.style.transition='none';fill.style.width='0%';
+  countT=setInterval(()=>{elapsed+=step;const pct=Math.min((elapsed/REFRESH)*100,100);fill.style.transition=`width ${step}ms linear`;fill.style.width=pct+'%';if(elapsed>=REFRESH)clearInterval(countT)},step);
 }
-
 function schedule(){clearTimeout(refreshT);startBar();refreshT=setTimeout(()=>{fetchData();schedule()},REFRESH)}
 
 /* INIT */
-fetchData();
-schedule();
+fetchData(); schedule();
 </script>
 </body>
 </html>
