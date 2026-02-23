@@ -1,0 +1,245 @@
+{
+  "exportedAt": "2026-02-23T05:01:49.552Z",
+  "teams": {
+    "Destroyer": [
+      "Saitama",
+      "Rolex",
+      "Inox"
+    ],
+    "Alaravidum Ambalais": [
+      "Sanji",
+      "Joker",
+      "Sneaky"
+    ],
+    "Loot Govindha": [
+      "Shiva",
+      "Orton",
+      "Danvishnu"
+    ],
+    "Omlaka Gangster": [
+      "Toxic Grueee",
+      "TG God",
+      "Sura"
+    ]
+  },
+  "matches": [
+    {
+      "id": 1,
+      "teamA": "Destroyer",
+      "teamB": "Loot Govindha"
+    },
+    {
+      "id": 2,
+      "teamA": "Alaravidum Ambalais",
+      "teamB": "Omlaka Gangster"
+    },
+    {
+      "id": 3,
+      "teamA": "Loot Govindha",
+      "teamB": "Alaravidum Ambalais"
+    },
+    {
+      "id": 4,
+      "teamA": "Omlaka Gangster",
+      "teamB": "Destroyer"
+    },
+    {
+      "id": 5,
+      "teamA": "Destroyer",
+      "teamB": "Alaravidum Ambalais"
+    },
+    {
+      "id": 6,
+      "teamA": "Loot Govindha",
+      "teamB": "Omlaka Gangster"
+    },
+    {
+      "id": 7,
+      "teamA": "Loot Govindha",
+      "teamB": "Destroyer"
+    },
+    {
+      "id": 8,
+      "teamA": "Omlaka Gangster",
+      "teamB": "Alaravidum Ambalais"
+    },
+    {
+      "id": 9,
+      "teamA": "Alaravidum Ambalais",
+      "teamB": "Loot Govindha"
+    },
+    {
+      "id": 10,
+      "teamA": "Destroyer",
+      "teamB": "Omlaka Gangster"
+    },
+    {
+      "id": 11,
+      "teamA": "Alaravidum Ambalais",
+      "teamB": "Destroyer"
+    },
+    {
+      "id": 12,
+      "teamA": "Omlaka Gangster",
+      "teamB": "Loot Govindha"
+    }
+  ],
+  "results": {
+    "1": {
+      "winner": "Destroyer",
+      "loser": "Loot Govindha",
+      "rounds": 1,
+      "stats": {
+        "Saitama": {
+          "kills": 9,
+          "deaths": 9,
+          "assists": 6,
+          "damage": 4591,
+          "hs": 0
+        },
+        "Rolex": {
+          "kills": 11,
+          "deaths": 8,
+          "assists": 7,
+          "damage": 4947,
+          "hs": 0
+        },
+        "Inox": {
+          "kills": 8,
+          "deaths": 7,
+          "assists": 6,
+          "damage": 2831,
+          "hs": 0
+        },
+        "Shiva": {
+          "kills": 9,
+          "deaths": 10,
+          "assists": 2,
+          "damage": 4743,
+          "hs": 0
+        },
+        "Orton": {
+          "kills": 9,
+          "deaths": 9,
+          "assists": 1,
+          "damage": 2922,
+          "hs": 0
+        },
+        "Danvishnu": {
+          "kills": 6,
+          "deaths": 9,
+          "assists": 4,
+          "damage": 3236,
+          "hs": 0
+        }
+      },
+      "teamA": "Destroyer",
+      "teamB": "Loot Govindha",
+      "savedAt": "2026-02-23T04:52:06.622Z"
+    },
+    "2": {
+      "winner": "Omlaka Gangster",
+      "loser": "Alaravidum Ambalais",
+      "rounds": 3,
+      "stats": {
+        "Sanji": {
+          "kills": 13,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 4493,
+          "hs": 15.38
+        },
+        "Joker": {
+          "kills": 4,
+          "deaths": 9,
+          "assists": 6,
+          "damage": 2711,
+          "hs": 50
+        },
+        "Sneaky": {
+          "kills": 5,
+          "deaths": 9,
+          "assists": 7,
+          "damage": 2860,
+          "hs": 20
+        },
+        "Toxic Grueee": {
+          "kills": 6,
+          "deaths": 7,
+          "assists": 4,
+          "damage": 4085,
+          "hs": 50
+        },
+        "TG God": {
+          "kills": 8,
+          "deaths": 8,
+          "assists": 6,
+          "damage": 4656,
+          "hs": 12.5
+        },
+        "Sura": {
+          "kills": 8,
+          "deaths": 7,
+          "assists": 4,
+          "damage": 2717,
+          "hs": 12.5
+        }
+      },
+      "teamA": "Alaravidum Ambalais",
+      "teamB": "Omlaka Gangster",
+      "savedAt": "2026-02-23T04:57:17.485Z"
+    },
+    "3": {
+      "winner": "Alaravidum Ambalais",
+      "loser": "Loot Govindha",
+      "rounds": 7,
+      "stats": {
+        "Shiva": {
+          "kills": 0,
+          "deaths": 0,
+          "assists": 0,
+          "damage": 0,
+          "hs": 0
+        },
+        "Orton": {
+          "kills": 4,
+          "deaths": 8,
+          "assists": 1,
+          "damage": 2674,
+          "hs": 25
+        },
+        "Danvishnu": {
+          "kills": 6,
+          "deaths": 8,
+          "assists": 1,
+          "damage": 3044,
+          "hs": 33.33
+        },
+        "Sanji": {
+          "kills": 6,
+          "deaths": 4,
+          "assists": 3,
+          "damage": 2137,
+          "hs": 16.67
+        },
+        "Joker": {
+          "kills": 5,
+          "deaths": 2,
+          "assists": 7,
+          "damage": 2029,
+          "hs": 0
+        },
+        "Sneaky": {
+          "kills": 5,
+          "deaths": 4,
+          "assists": 5,
+          "damage": 1331,
+          "hs": 0
+        }
+      },
+      "teamA": "Loot Govindha",
+      "teamB": "Alaravidum Ambalais",
+      "savedAt": "2026-02-23T05:01:02.004Z"
+    }
+  }
+}
