@@ -198,7 +198,7 @@
    ⚙️ UPDATE THIS URL after pushing data.json to GitHub
    Format: https://raw.githubusercontent.com/USERNAME/REPO/main/data.json
    ===================================================== */
-const DATA_URL = 'https://raw.githubusercontent.com/TJ-programmer/ff-tournament/main/data.json';
+const DATA_URL = 'YOUR_GITHUB_RAW_URL_HERE';
 const REFRESH  = 30000; // 30 seconds
 
 let gData = null, refreshT = null, countT = null;
@@ -335,31 +335,31 @@ function renderTable(d) {
 
 /* ========== PLAYER RATING ========== */
 /*
-  Rating (0–10) weighted:
-  Kills      25%  → normalised vs best
-  K/D        20%  → normalised vs best
-  Damage     20%  → normalised vs best
-  HS%        15%  → raw /100
-  Assists    10%  → normalised vs best
-  Survival   10%  → 1 - (deaths/maxDeaths) — fewer deaths = better
-*/
-function calcRating(p, allPlayers) {
-  const safe=(v,arr)=>arr.length?v/Math.max(...arr,1):0;
-  const kills  =allPlayers.map(x=>x.kills);
-  const kd     =allPlayers.map(x=>x.kd);
-  const dmg    =allPlayers.map(x=>x.damage);
-  const assists=allPlayers.map(x=>x.assists);
-  const deaths =allPlayers.map(x=>x.deaths);
+  Rating (0-10): all metrics normalised per-match vs best player
+  Kills/match    25% | K/D ratio      20% | Damage/match   20%
+  Headshot%      15% | Assists/match  10% | Survival       10%
 
-  const s = (
-    safe(p.kills,   kills)   * 0.25 +
-    safe(p.kd,      kd)      * 0.20 +
-    safe(p.damage,  dmg)     * 0.20 +
-    (p.hs/100)               * 0.15 +
-    safe(p.assists, assists) * 0.10 +
-    (1-safe(p.deaths,deaths))* 0.10
-  );
-  return Math.min(10, parseFloat((s*10).toFixed(2)));
+  Uses per-match averages so late-joined players are not unfairly
+  penalised. HS% normalised vs best (not raw /100).
+*/
+function calcRating(p, all) {
+  const norm = (v, arr) => Math.min(v / Math.max(...arr, 0.001), 1);
+  const kpm  = p.mp > 0 ? p.kills   / p.mp : 0;
+  const dpm  = p.mp > 0 ? p.damage  / p.mp : 0;
+  const apm  = p.mp > 0 ? p.assists / p.mp : 0;
+  const depm = p.mp > 0 ? p.deaths  / p.mp : 0;
+  const allKpm  = all.map(x => x.mp>0 ? x.kills/x.mp   : 0);
+  const allDpm  = all.map(x => x.mp>0 ? x.damage/x.mp  : 0);
+  const allApm  = all.map(x => x.mp>0 ? x.assists/x.mp : 0);
+  const allDepm = all.map(x => x.mp>0 ? x.deaths/x.mp  : 0);
+  const score =
+    norm(kpm,  allKpm)         * 0.25 +
+    norm(p.kd, all.map(x=>x.kd)) * 0.20 +
+    norm(dpm,  allDpm)         * 0.20 +
+    norm(p.hs, all.map(x=>x.hs)) * 0.15 +
+    norm(apm,  allApm)         * 0.10 +
+    (1 - norm(depm, allDepm))  * 0.10;
+  return parseFloat((score * 10).toFixed(2));
 }
 
 function ratingColor(r) {
@@ -476,7 +476,7 @@ function renderStats(d) {
     </div>
     <div style="margin-top:10px;padding:12px 16px;background:rgba(255,255,255,0.03);border:1px solid var(--b);border-radius:12px;font-size:0.72rem;color:var(--tm)">
       ⭐ <strong style="color:var(--t2)">Rating formula:</strong>
-      Kills 25% · K/D Ratio 20% · Damage 20% · Headshot% 15% · Assists 10% · Survival 10%
+      Kills/match 25% · K/D 20% · Damage/match 20% · HS% (normalised) 15% · Assists/match 10% · Survival 10%
     </div>`;
 }
 
