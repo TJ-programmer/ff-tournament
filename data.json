@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-24T05:04:02.024Z",
+  "exportedAt": "2026-02-24T05:43:04.436Z",
   "teams": {
     "Destroyer": [
       "Saitama",
@@ -814,6 +814,58 @@
       "teamA": "Omlaka Gangster",
       "teamB": "Loot Govindha",
       "savedAt": "2026-02-24T05:03:48.508Z"
+    },
+    "e2": {
+      "winner": "Alaravidum Ambalais",
+      "loser": "Loot Govindha",
+      "rounds": 1,
+      "stats": {
+        "Sanji": {
+          "kills": 8,
+          "deaths": 8,
+          "assists": 8,
+          "damage": 3826,
+          "hs": 12.5
+        },
+        "Joker": {
+          "kills": 10,
+          "deaths": 10,
+          "assists": 3,
+          "damage": 2624,
+          "hs": 10
+        },
+        "Sneaky": {
+          "kills": 9,
+          "deaths": 8,
+          "assists": 6,
+          "damage": 4304,
+          "hs": 33.33
+        },
+        "Shiva": {
+          "kills": 12,
+          "deaths": 10,
+          "assists": 5,
+          "damage": 5432,
+          "hs": 25
+        },
+        "Orton": {
+          "kills": 3,
+          "deaths": 9,
+          "assists": 7,
+          "damage": 2475,
+          "hs": 0
+        },
+        "Danvishnu": {
+          "kills": 10,
+          "deaths": 8,
+          "assists": 5,
+          "damage": 4356,
+          "hs": 20
+        }
+      },
+      "teamA": "Alaravidum Ambalais",
+      "teamB": "Loot Govindha",
+      "savedAt": "2026-02-24T05:42:54.771Z"
     }
   },
   "playoffsUnlocked": true
