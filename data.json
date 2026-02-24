@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-24T05:43:04.436Z",
+  "exportedAt": "2026-02-24T06:07:08.738Z",
   "teams": {
     "Destroyer": [
       "Saitama",
@@ -866,6 +866,58 @@
       "teamA": "Alaravidum Ambalais",
       "teamB": "Loot Govindha",
       "savedAt": "2026-02-24T05:42:54.771Z"
+    },
+    "final": {
+      "winner": "Destroyer",
+      "loser": "Alaravidum Ambalais",
+      "rounds": 4,
+      "stats": {
+        "Saitama": {
+          "kills": 12,
+          "deaths": 5,
+          "assists": 1,
+          "damage": 3796,
+          "hs": 33.33
+        },
+        "Rolex": {
+          "kills": 6,
+          "deaths": 5,
+          "assists": 4,
+          "damage": 4170,
+          "hs": 0
+        },
+        "Inox": {
+          "kills": 7,
+          "deaths": 6,
+          "assists": 6,
+          "damage": 2423,
+          "hs": 28.57
+        },
+        "Sanji": {
+          "kills": 7,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 3347,
+          "hs": 28.57
+        },
+        "Joker": {
+          "kills": 6,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 2233,
+          "hs": 0
+        },
+        "Sneaky": {
+          "kills": 3,
+          "deaths": 8,
+          "assists": 5,
+          "damage": 2348,
+          "hs": 0
+        }
+      },
+      "teamA": "Destroyer",
+      "teamB": "Alaravidum Ambalais",
+      "savedAt": "2026-02-24T06:06:57.303Z"
     }
   },
   "playoffsUnlocked": true
