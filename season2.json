@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-24T14:24:34.089Z",
+  "exportedAt": "2026-02-25T18:19:32.338Z",
   "teams": {
     "Destroyers": [
       "Saitama",
@@ -188,6 +188,58 @@
       "teamA": "Alaravidum Ambalais",
       "teamB": "OG",
       "savedAt": "2026-02-24T09:30:55.301Z"
+    },
+    "4": {
+      "winner": "OG",
+      "loser": "Destroyers",
+      "rounds": 7,
+      "stats": {
+        "Rolex": {
+          "kills": 12,
+          "deaths": 1,
+          "assists": 4,
+          "damage": 3330,
+          "hs": 8.33
+        },
+        "TG God": {
+          "kills": 5,
+          "deaths": 3,
+          "assists": 5,
+          "damage": 2536,
+          "hs": 40
+        },
+        "Sneaky": {
+          "kills": 7,
+          "deaths": 2,
+          "assists": 7,
+          "damage": 1994,
+          "hs": 14.29
+        },
+        "Saitama": {
+          "kills": 1,
+          "deaths": 8,
+          "assists": 0,
+          "damage": 1119,
+          "hs": 0
+        },
+        "Inox": {
+          "kills": 1,
+          "deaths": 8,
+          "assists": 0,
+          "damage": 1118,
+          "hs": 0
+        },
+        "Toxic Grueee": {
+          "kills": 1,
+          "deaths": 8,
+          "assists": 0,
+          "damage": 1396,
+          "hs": 100
+        }
+      },
+      "teamA": "OG",
+      "teamB": "Destroyers",
+      "savedAt": "2026-02-25T18:19:18.181Z"
     }
   },
   "playoffs": {},
