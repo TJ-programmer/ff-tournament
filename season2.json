@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-25T18:19:32.338Z",
+  "exportedAt": "2026-02-26T08:59:27.367Z",
   "teams": {
     "Destroyers": [
       "Saitama",
@@ -188,6 +188,58 @@
       "teamA": "Alaravidum Ambalais",
       "teamB": "OG",
       "savedAt": "2026-02-24T09:30:55.301Z"
+    },
+    "3": {
+      "winner": "Alaravidum Ambalais",
+      "loser": "Defenders",
+      "rounds": 1,
+      "stats": {
+        "Shiva": {
+          "kills": 11,
+          "deaths": 10,
+          "assists": 5,
+          "damage": 5607,
+          "hs": 9.09
+        },
+        "Orton": {
+          "kills": 6,
+          "deaths": 9,
+          "assists": 6,
+          "damage": 3437,
+          "hs": 16.67
+        },
+        "Sura": {
+          "kills": 7,
+          "deaths": 9,
+          "assists": 6,
+          "damage": 3051,
+          "hs": 0
+        },
+        "Sanji": {
+          "kills": 7,
+          "deaths": 9,
+          "assists": 5,
+          "damage": 4265,
+          "hs": 28.57
+        },
+        "Joker": {
+          "kills": 11,
+          "deaths": 7,
+          "assists": 6,
+          "damage": 5091,
+          "hs": 9.09
+        },
+        "Danvishnu": {
+          "kills": 10,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 3211,
+          "hs": 10
+        }
+      },
+      "teamA": "Defenders",
+      "teamB": "Alaravidum Ambalais",
+      "savedAt": "2026-02-26T08:59:23.967Z"
     },
     "4": {
       "winner": "OG",
