@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-27T14:46:04.392Z",
+  "exportedAt": "2026-02-27T17:44:22.727Z",
   "teams": {
     "Destroyers": [
       "Saitama",
@@ -345,6 +345,58 @@
       "teamB": "Alaravidum Ambalais",
       "savedAt": "2026-02-26T17:01:23.384Z"
     },
+    "6": {
+      "winner": "OG",
+      "loser": "Defenders",
+      "rounds": 2,
+      "stats": {
+        "Shiva": {
+          "kills": 9,
+          "deaths": 8,
+          "assists": 6,
+          "damage": 4272,
+          "hs": 66.67
+        },
+        "Orton": {
+          "kills": 7,
+          "deaths": 9,
+          "assists": 6,
+          "damage": 4273,
+          "hs": 14.29
+        },
+        "Sura": {
+          "kills": 7,
+          "deaths": 9,
+          "assists": 1,
+          "damage": 3717,
+          "hs": 42.86
+        },
+        "Rolex": {
+          "kills": 11,
+          "deaths": 8,
+          "assists": 2,
+          "damage": 5176,
+          "hs": 9.09
+        },
+        "TG God": {
+          "kills": 5,
+          "deaths": 8,
+          "assists": 6,
+          "damage": 2431,
+          "hs": 0
+        },
+        "Sneaky": {
+          "kills": 8,
+          "deaths": 7,
+          "assists": 8,
+          "damage": 3797,
+          "hs": 0
+        }
+      },
+      "teamA": "Defenders",
+      "teamB": "OG",
+      "savedAt": "2026-02-27T17:05:57.968Z"
+    },
     "7": {
       "winner": "Destroyers",
       "loser": "Defenders",
@@ -397,6 +449,58 @@
       "teamB": "Destroyers",
       "savedAt": "2026-02-27T09:05:28.527Z"
     },
+    "8": {
+      "winner": "Alaravidum Ambalais",
+      "loser": "OG",
+      "rounds": 8,
+      "stats": {
+        "Rolex": {
+          "kills": 3,
+          "deaths": 8,
+          "assists": 1,
+          "damage": 2083,
+          "hs": 66.67
+        },
+        "TG God": {
+          "kills": 2,
+          "deaths": 8,
+          "assists": 1,
+          "damage": 941,
+          "hs": 0
+        },
+        "Sneaky": {
+          "kills": 0,
+          "deaths": 8,
+          "assists": 4,
+          "damage": 1257,
+          "hs": 0
+        },
+        "Sanji": {
+          "kills": 1,
+          "deaths": 4,
+          "assists": 9,
+          "damage": 1103,
+          "hs": 0
+        },
+        "Joker": {
+          "kills": 14,
+          "deaths": 0,
+          "assists": 2,
+          "damage": 4074,
+          "hs": 21.43
+        },
+        "Danvishnu": {
+          "kills": 9,
+          "deaths": 1,
+          "assists": 2,
+          "damage": 2274,
+          "hs": 0
+        }
+      },
+      "teamA": "OG",
+      "teamB": "Alaravidum Ambalais",
+      "savedAt": "2026-02-27T17:08:28.104Z"
+    },
     "9": {
       "winner": "Alaravidum Ambalais",
       "loser": "Defenders",
@@ -448,6 +552,58 @@
       "teamA": "Alaravidum Ambalais",
       "teamB": "Defenders",
       "savedAt": "2026-02-27T14:46:02.812Z"
+    },
+    "11": {
+      "winner": "Destroyers",
+      "loser": "Alaravidum Ambalais",
+      "rounds": 1,
+      "stats": {
+        "Sanji": {
+          "kills": 9,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 3470,
+          "hs": 0
+        },
+        "Joker": {
+          "kills": 7,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 2782,
+          "hs": 0
+        },
+        "Danvishnu": {
+          "kills": 4,
+          "deaths": 10,
+          "assists": 1,
+          "damage": 2204,
+          "hs": 16.67
+        },
+        "Saitama": {
+          "kills": 13,
+          "deaths": 8,
+          "assists": 5,
+          "damage": 5689,
+          "hs": 46.15
+        },
+        "Inox": {
+          "kills": 9,
+          "deaths": 7,
+          "assists": 4,
+          "damage": 2258,
+          "hs": 0
+        },
+        "Toxic Grueee": {
+          "kills": 4,
+          "deaths": 7,
+          "assists": 6,
+          "damage": 2039,
+          "hs": 25
+        }
+      },
+      "teamA": "Alaravidum Ambalais",
+      "teamB": "Destroyers",
+      "savedAt": "2026-02-27T17:44:12.257Z"
     }
   },
   "playoffs": {},
