@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-26T17:01:26.091Z",
+  "exportedAt": "2026-02-27T09:05:30.723Z",
   "teams": {
     "Destroyers": [
       "Saitama",
@@ -344,6 +344,58 @@
       "teamA": "Destroyers",
       "teamB": "Alaravidum Ambalais",
       "savedAt": "2026-02-26T17:01:23.384Z"
+    },
+    "7": {
+      "winner": "Destroyers",
+      "loser": "Defenders",
+      "rounds": 1,
+      "stats": {
+        "Shiva": {
+          "kills": 8,
+          "deaths": 9,
+          "assists": 8,
+          "damage": 5107,
+          "hs": 25
+        },
+        "Orton": {
+          "kills": 3,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 1476,
+          "hs": 0
+        },
+        "Sura": {
+          "kills": 9,
+          "deaths": 8,
+          "assists": 5,
+          "damage": 5066,
+          "hs": 44.44
+        },
+        "Saitama": {
+          "kills": 9,
+          "deaths": 7,
+          "assists": 8,
+          "damage": 4546,
+          "hs": 11.11
+        },
+        "Inox": {
+          "kills": 7,
+          "deaths": 8,
+          "assists": 5,
+          "damage": 2722,
+          "hs": 28.57
+        },
+        "Toxic Grueee": {
+          "kills": 9,
+          "deaths": 7,
+          "assists": 5,
+          "damage": 3779,
+          "hs": 22.22
+        }
+      },
+      "teamA": "Defenders",
+      "teamB": "Destroyers",
+      "savedAt": "2026-02-27T09:05:28.527Z"
     }
   },
   "playoffs": {},
