@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-27T17:44:22.727Z",
+  "exportedAt": "2026-02-28T17:37:48.061Z",
   "teams": {
     "Destroyers": [
       "Saitama",
@@ -604,6 +604,58 @@
       "teamA": "Alaravidum Ambalais",
       "teamB": "Destroyers",
       "savedAt": "2026-02-27T17:44:12.257Z"
+    },
+    "12": {
+      "winner": "OG",
+      "loser": "Defenders",
+      "rounds": 5,
+      "stats": {
+        "Rolex": {
+          "kills": 10,
+          "deaths": 3,
+          "assists": 7,
+          "damage": 4404,
+          "hs": 10
+        },
+        "TG God": {
+          "kills": 2,
+          "deaths": 7,
+          "assists": 8,
+          "damage": 1751,
+          "hs": 0
+        },
+        "Sneaky": {
+          "kills": 12,
+          "deaths": 4,
+          "assists": 4,
+          "damage": 3390,
+          "hs": 16.67
+        },
+        "Shiva": {
+          "kills": 1,
+          "deaths": 8,
+          "assists": 4,
+          "damage": 2370,
+          "hs": 0
+        },
+        "Orton": {
+          "kills": 6,
+          "deaths": 8,
+          "assists": 2,
+          "damage": 2909,
+          "hs": 16.67
+        },
+        "Sura": {
+          "kills": 7,
+          "deaths": 8,
+          "assists": 2,
+          "damage": 3496,
+          "hs": 14.29
+        }
+      },
+      "teamA": "OG",
+      "teamB": "Defenders",
+      "savedAt": "2026-02-28T17:37:43.834Z"
     }
   },
   "playoffs": {},
