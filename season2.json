@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-02-28T18:05:05.945Z",
+  "exportedAt": "2026-03-01T17:28:21.794Z",
   "teams": {
     "Destroyers": [
       "Saitama",
@@ -710,6 +710,59 @@
       "savedAt": "2026-02-28T17:37:43.834Z"
     }
   },
-  "playoffs": {},
+  "playoffs": {
+    "q1": {
+      "winner": "Alaravidum Ambalais",
+      "loser": "Destroyers",
+      "rounds": 1,
+      "stats": {
+        "Sanji": {
+          "kills": 10,
+          "deaths": 7,
+          "assists": 2,
+          "damage": 4314,
+          "hs": 10
+        },
+        "Joker": {
+          "kills": 4,
+          "deaths": 8,
+          "assists": 6,
+          "damage": 3215,
+          "hs": 25
+        },
+        "Danvishnu": {
+          "kills": 8,
+          "deaths": 7,
+          "assists": 4,
+          "damage": 2926,
+          "hs": 0
+        },
+        "Saitama": {
+          "kills": 3,
+          "deaths": 11,
+          "assists": 7,
+          "damage": 4120,
+          "hs": 0
+        },
+        "Inox": {
+          "kills": 10,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 3227,
+          "hs": 20
+        },
+        "Toxic Grueee": {
+          "kills": 9,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 3303,
+          "hs": 33.33
+        }
+      },
+      "teamA": "Alaravidum Ambalais",
+      "teamB": "Destroyers",
+      "savedAt": "2026-03-01T17:28:18.328Z"
+    }
+  },
   "playoffsUnlocked": true
 }
