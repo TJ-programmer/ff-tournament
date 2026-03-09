@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-09T07:24:13.660Z",
+  "exportedAt": "2026-03-09T08:09:36.007Z",
   "teams": {
     "Warlords": [
       "Saitama",
@@ -188,6 +188,110 @@
       "teamA": "Warlords",
       "teamB": "Night Raiders",
       "savedAt": "2026-03-09T07:24:01.692Z"
+    },
+    "6": {
+      "winner": "Arupadai",
+      "loser": "Night Raiders",
+      "rounds": 4,
+      "stats": {
+        "inox": {
+          "kills": 5,
+          "deaths": 8,
+          "assists": 1,
+          "damage": 2018,
+          "hs": 20
+        },
+        "orton": {
+          "kills": 2,
+          "deaths": 9,
+          "assists": 3,
+          "damage": 2150,
+          "hs": 0
+        },
+        "sneaky": {
+          "kills": 6,
+          "deaths": 8,
+          "assists": 2,
+          "damage": 2804,
+          "hs": 16.67
+        },
+        "Rolex": {
+          "kills": 11,
+          "deaths": 5,
+          "assists": 3,
+          "damage": 3872,
+          "hs": 27.27
+        },
+        "Sura": {
+          "kills": 9,
+          "deaths": 4,
+          "assists": 7,
+          "damage": 2844,
+          "hs": 0
+        },
+        "Danvishnu": {
+          "kills": 5,
+          "deaths": 4,
+          "assists": 5,
+          "damage": 3133,
+          "hs": 0
+        }
+      },
+      "teamA": "Night Raiders",
+      "teamB": "Arupadai",
+      "savedAt": "2026-03-09T07:43:15.776Z"
+    },
+    "7": {
+      "winner": "Warlords",
+      "loser": "Arupadai",
+      "rounds": 4,
+      "stats": {
+        "Rolex": {
+          "kills": 9,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 3977,
+          "hs": 22.22
+        },
+        "Sura": {
+          "kills": 3,
+          "deaths": 10,
+          "assists": 1,
+          "damage": 1614,
+          "hs": 0
+        },
+        "Danvishnu": {
+          "kills": 3,
+          "deaths": 9,
+          "assists": 3,
+          "damage": 2008,
+          "hs": 0
+        },
+        "Saitama": {
+          "kills": 14,
+          "deaths": 4,
+          "assists": 3,
+          "damage": 5622,
+          "hs": 35.71
+        },
+        "shiva": {
+          "kills": 12,
+          "deaths": 4,
+          "assists": 2,
+          "damage": 4489,
+          "hs": 25
+        },
+        "TG God": {
+          "kills": 1,
+          "deaths": 7,
+          "assists": 8,
+          "damage": 1395,
+          "hs": 100
+        }
+      },
+      "teamA": "Arupadai",
+      "teamB": "Warlords",
+      "savedAt": "2026-03-09T08:09:33.991Z"
     }
   },
   "playoffs": {},
