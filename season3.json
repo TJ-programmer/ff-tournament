@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-09T06:31:10.792Z",
+  "exportedAt": "2026-03-09T07:24:13.660Z",
   "teams": {
     "Warlords": [
       "Saitama",
@@ -136,6 +136,58 @@
       "teamA": "Warlords",
       "teamB": "Arupadai",
       "savedAt": "2026-03-09T06:31:08.621Z"
+    },
+    "3": {
+      "winner": "Warlords",
+      "loser": "Night Raiders",
+      "rounds": 3,
+      "stats": {
+        "Saitama": {
+          "kills": 16,
+          "deaths": 6,
+          "assists": 3,
+          "damage": 5435,
+          "hs": 12.5
+        },
+        "shiva": {
+          "kills": 9,
+          "deaths": 6,
+          "assists": 4,
+          "damage": 3141,
+          "hs": 22.22
+        },
+        "TG God": {
+          "kills": 4,
+          "deaths": 6,
+          "assists": 12,
+          "damage": 3116,
+          "hs": 50
+        },
+        "inox": {
+          "kills": 2,
+          "deaths": 10,
+          "assists": 4,
+          "damage": 1765,
+          "hs": 0
+        },
+        "orton": {
+          "kills": 7,
+          "deaths": 10,
+          "assists": 0,
+          "damage": 2303,
+          "hs": 28.57
+        },
+        "sneaky": {
+          "kills": 9,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 3102,
+          "hs": 22.22
+        }
+      },
+      "teamA": "Warlords",
+      "teamB": "Night Raiders",
+      "savedAt": "2026-03-09T07:24:01.692Z"
     }
   },
   "playoffs": {},
