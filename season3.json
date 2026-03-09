@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-09T14:38:48.604Z",
+  "exportedAt": "2026-03-09T15:45:47.552Z",
   "teams": {
     "Warlords": [
       "Saitama",
@@ -136,6 +136,58 @@
       "teamA": "Warlords",
       "teamB": "Arupadai",
       "savedAt": "2026-03-09T06:31:08.621Z"
+    },
+    "2": {
+      "winner": "Conqueors",
+      "loser": "Night Raiders",
+      "rounds": 6,
+      "stats": {
+        "Sanji": {
+          "kills": 11,
+          "deaths": 2,
+          "assists": 6,
+          "damage": 2936,
+          "hs": 27.27
+        },
+        "Joker": {
+          "kills": 12,
+          "deaths": 2,
+          "assists": 4,
+          "damage": 3216,
+          "hs": 25
+        },
+        "Toxic Gruee": {
+          "kills": 2,
+          "deaths": 4,
+          "assists": 5,
+          "damage": 2183,
+          "hs": 50
+        },
+        "inox": {
+          "kills": 2,
+          "deaths": 9,
+          "assists": 1,
+          "damage": 1751,
+          "hs": 0
+        },
+        "orton": {
+          "kills": 2,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 2128,
+          "hs": 50
+        },
+        "sneaky": {
+          "kills": 4,
+          "deaths": 8,
+          "assists": 1,
+          "damage": 2444,
+          "hs": 25
+        }
+      },
+      "teamA": "Conqueors",
+      "teamB": "Night Raiders",
+      "savedAt": "2026-03-09T15:43:21.863Z"
     },
     "3": {
       "winner": "Warlords",
@@ -396,6 +448,58 @@
       "teamA": "Arupadai",
       "teamB": "Warlords",
       "savedAt": "2026-03-09T08:09:33.991Z"
+    },
+    "8": {
+      "winner": "Conqueors",
+      "loser": "Night Raiders",
+      "rounds": 6,
+      "stats": {
+        "inox": {
+          "kills": 2,
+          "deaths": 8,
+          "assists": 2,
+          "damage": 2187,
+          "hs": 0
+        },
+        "orton": {
+          "kills": 5,
+          "deaths": 8,
+          "assists": 1,
+          "damage": 2253,
+          "hs": 40
+        },
+        "sneaky": {
+          "kills": 5,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 2260,
+          "hs": 20
+        },
+        "Sanji": {
+          "kills": 5,
+          "deaths": 6,
+          "assists": 5,
+          "damage": 2310,
+          "hs": 40
+        },
+        "Joker": {
+          "kills": 15,
+          "deaths": 3,
+          "assists": 1,
+          "damage": 5251,
+          "hs": 13.33
+        },
+        "Toxic Gruee": {
+          "kills": 4,
+          "deaths": 5,
+          "assists": 3,
+          "damage": 1829,
+          "hs": 50
+        }
+      },
+      "teamA": "Night Raiders",
+      "teamB": "Conqueors",
+      "savedAt": "2026-03-09T15:45:33.663Z"
     },
     "10": {
       "winner": "Arupadai",
