@@ -1,0 +1,90 @@
+{
+  "exportedAt": "2026-03-09T04:36:17.950Z",
+  "teams": {
+    "Warlords": [
+      "Saitama",
+      "shiva",
+      "TG God"
+    ],
+    "Conqueors": [
+      "Sanji",
+      "Joker",
+      "Toxic Gruee"
+    ],
+    "Night Raiders": [
+      "inox",
+      "orton",
+      "sneaky"
+    ],
+    "Arupadai": [
+      "Rolex",
+      "Sura",
+      "Danvishnu"
+    ]
+  },
+  "matches": [
+    {
+      "id": 1,
+      "teamA": "Warlords",
+      "teamB": "Arupadai"
+    },
+    {
+      "id": 2,
+      "teamA": "Conqueors",
+      "teamB": "Night Raiders"
+    },
+    {
+      "id": 3,
+      "teamA": "Warlords",
+      "teamB": "Night Raiders"
+    },
+    {
+      "id": 4,
+      "teamA": "Arupadai",
+      "teamB": "Conqueors"
+    },
+    {
+      "id": 5,
+      "teamA": "Warlords",
+      "teamB": "Conqueors"
+    },
+    {
+      "id": 6,
+      "teamA": "Night Raiders",
+      "teamB": "Arupadai"
+    },
+    {
+      "id": 7,
+      "teamA": "Arupadai",
+      "teamB": "Warlords"
+    },
+    {
+      "id": 8,
+      "teamA": "Night Raiders",
+      "teamB": "Conqueors"
+    },
+    {
+      "id": 9,
+      "teamA": "Night Raiders",
+      "teamB": "Warlords"
+    },
+    {
+      "id": 10,
+      "teamA": "Conqueors",
+      "teamB": "Arupadai"
+    },
+    {
+      "id": 11,
+      "teamA": "Conqueors",
+      "teamB": "Warlords"
+    },
+    {
+      "id": 12,
+      "teamA": "Arupadai",
+      "teamB": "Night Raiders"
+    }
+  ],
+  "results": {},
+  "playoffs": {},
+  "playoffsUnlocked": false
+}

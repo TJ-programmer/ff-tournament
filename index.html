@@ -899,8 +899,6 @@
       <div class="season-wrap">
         <span class="season-lbl">Season</span>
         <select class="season-sel" id="seasonSel" onchange="changeSeason(this.value)">
-          <option value="1">Season 1</option>
-          <option value="2">Season 2</option>
         </select>
       </div>
       <nav class="tabs">
@@ -1011,25 +1009,70 @@
     /* ====================================================
        SEASON CONFIG
        ==================================================== */
-    const SEASONS = {
-      '1': {
-        label: 'Season 1',
-        url: 'https://raw.githubusercontent.com/TJ-programmer/ff-tournament/main/season1.json'
-      },
-      '2': {
-        label: 'Season 2',
-        url: 'https://raw.githubusercontent.com/TJ-programmer/ff-tournament/main/season2.json'
-      }
-    };
+    const RAW_BASE = 'https://raw.githubusercontent.com/TJ-programmer/ff-tournament/main/';
+    const CONTENTS_API = 'https://api.github.com/repos/TJ-programmer/ff-tournament/contents';
+    const CUSTOM_CFG_KEY = 'ff_custom_season_configs_v1';
+    let SEASONS = {};
 
     const REFRESH = 30000;
     let gData = null, refreshT = null, countT = null;
     let currentSeason = localStorage.getItem('ff_view_season') || '1';
 
+    function buildSeasonMap(nums) {
+      const uniq = [...new Set(nums.map(n => Number(n)).filter(n => Number.isInteger(n) && n > 0))].sort((a, b) => a - b);
+      const map = {};
+      uniq.forEach(n => {
+        const s = String(n);
+        map[s] = {
+          label: `Season ${s}`,
+          localUrl: `season${s}.json`,
+          remoteUrl: `${RAW_BASE}season${s}.json`
+        };
+      });
+      return map;
+    }
+
+    function getCustomSeasonNumbers() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(CUSTOM_CFG_KEY) || '{}') || {};
+        return Object.keys(raw)
+          .map(Number)
+          .filter(n => Number.isInteger(n) && n > 2);
+      } catch {
+        return [];
+      }
+    }
+
+    async function discoverSeasons() {
+      const localNums = [1, 2, ...getCustomSeasonNumbers()];
+      try {
+        const res = await fetch(CONTENTS_API + '?t=' + Date.now());
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const files = await res.json();
+        const remoteNums = (Array.isArray(files) ? files : [])
+          .map(f => (f && typeof f.name === 'string') ? f.name.match(/^season(\d+)\.json$/i) : null)
+          .filter(Boolean)
+          .map(m => Number(m[1]));
+        return [...new Set([...localNums, ...remoteNums])];
+      } catch (e) {
+        console.warn('Season discovery failed, using local/admin seasons.', e);
+      }
+      return localNums;
+    }
+
+    function renderSeasonSelector() {
+      const sel = document.getElementById('seasonSel');
+      const nums = Object.keys(SEASONS).map(Number).sort((a, b) => a - b);
+      sel.innerHTML = nums.map(n => `<option value="${n}">Season ${n}</option>`).join('');
+      if (!SEASONS[currentSeason]) currentSeason = String(nums[0] || 1);
+      sel.value = currentSeason;
+    }
+
     /* ====================================================
        SEASON SWITCH
        ==================================================== */
     function changeSeason(s) {
+      if (!SEASONS[s]) return;
       currentSeason = s;
       localStorage.setItem('ff_view_season', s);
       gData = null;
@@ -1081,16 +1124,52 @@
        FETCH
        ==================================================== */
     async function fetchData() {
-      const url = SEASONS[currentSeason].url;
+      const season = SEASONS[currentSeason];
+      if (!season) return;
       try {
-        const res = await fetch(url + '?t=' + Date.now());
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        const d = await res.json();
+        const d = await loadSeasonData(currentSeason, season);
+        if (!d) throw new Error('No data source available');
         gData = d; renderAll(d); setLU(d.exportedAt);
       } catch (e) {
         console.error(e);
         if (!gData) showFetchErr();
       }
+    }
+
+    async function tryFetchJSON(url) {
+      const res = await fetch(url + '?t=' + Date.now());
+      if (!res.ok) return null;
+      return await res.json();
+    }
+
+    function getAdminSeasonData(seasonNo) {
+      const s = String(seasonNo);
+      if (Number(s) <= 2) return null;
+      try {
+        const customCfg = JSON.parse(localStorage.getItem(CUSTOM_CFG_KEY) || '{}') || {};
+        const cfg = customCfg[s];
+        if (!cfg || !cfg.teams || !cfg.matches) return null;
+        const results = JSON.parse(localStorage.getItem(`ff_s${s}_v5`) || '{}') || {};
+        const playoffs = JSON.parse(localStorage.getItem(`ff_s${s}_pl_v5`) || '{}') || {};
+        return {
+          exportedAt: new Date().toISOString(),
+          teams: cfg.teams,
+          matches: cfg.matches,
+          results,
+          playoffs,
+          playoffsUnlocked: Object.keys(results).length >= 12
+        };
+      } catch {
+        return null;
+      }
+    }
+
+    async function loadSeasonData(seasonNo, seasonCfg) {
+      const localData = await tryFetchJSON(seasonCfg.localUrl);
+      if (localData) return localData;
+      const remoteData = await tryFetchJSON(seasonCfg.remoteUrl);
+      if (remoteData) return remoteData;
+      return getAdminSeasonData(seasonNo);
     }
 
     /* ====================================================
@@ -1497,8 +1576,13 @@
     /* ====================================================
        HELPERS
        ==================================================== */
-    function setLU(at) { const e = document.getElementById('lu'); if (!at) { e.textContent = 'Just updated'; return } const d = new Date(at); e.textContent = 'Updated: ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ' · ' + SEASONS[currentSeason].label }
-    function showFetchErr() { const url = SEASONS[currentSeason].url; const m = `<div class="errbx"><h3>⚠️ Could not load data</h3><p>Make sure <code>${url}</code> exists on your server. Retrying in 30s.</p></div>`;['tableContent', 'statsLeague', 'fixLeague', 'plContent'].forEach(id => document.getElementById(id).innerHTML = m); document.getElementById('lu').textContent = 'Load failed' }
+    function setLU(at) { const e = document.getElementById('lu'); if (!at) { e.textContent = 'Just updated'; return } const d = new Date(at); const label = SEASONS[currentSeason]?.label || `Season ${currentSeason}`; e.textContent = 'Updated: ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ' · ' + label }
+    function showFetchErr() {
+      const s = String(currentSeason);
+      const m = `<div class="errbx"><h3>⚠️ Could not load data</h3><p>Tried <code>season${s}.json</code>, GitHub remote, and admin local data. Retrying in 30s.</p></div>`;
+      ['tableContent', 'statsLeague', 'fixLeague', 'plContent'].forEach(id => document.getElementById(id).innerHTML = m);
+      document.getElementById('lu').textContent = 'Load failed';
+    }
 
     /* REFRESH BAR */
     function startBar() {
@@ -1509,8 +1593,14 @@
     function schedule() { clearTimeout(refreshT); startBar(); refreshT = setTimeout(() => { fetchData(); schedule() }, REFRESH) }
 
     /* INIT */
-    document.getElementById('seasonSel').value = currentSeason;
-    fetchData(); schedule();
+    async function init() {
+      const seasonNumbers = await discoverSeasons();
+      SEASONS = buildSeasonMap(seasonNumbers);
+      renderSeasonSelector();
+      await fetchData();
+      schedule();
+    }
+    init();
   </script>
 </body>
 
