@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-09T08:09:36.007Z",
+  "exportedAt": "2026-03-09T14:38:48.604Z",
   "teams": {
     "Warlords": [
       "Saitama",
@@ -189,6 +189,110 @@
       "teamB": "Night Raiders",
       "savedAt": "2026-03-09T07:24:01.692Z"
     },
+    "4": {
+      "winner": "Arupadai",
+      "loser": "Conqueors",
+      "rounds": 3,
+      "stats": {
+        "Rolex": {
+          "kills": 12,
+          "deaths": 5,
+          "assists": 6,
+          "damage": 5378,
+          "hs": 41.67
+        },
+        "Sura": {
+          "kills": 6,
+          "deaths": 7,
+          "assists": 1,
+          "damage": 2543,
+          "hs": 0
+        },
+        "Danvishnu": {
+          "kills": 7,
+          "deaths": 5,
+          "assists": 3,
+          "damage": 2515,
+          "hs": 14.29
+        },
+        "Sanji": {
+          "kills": 2,
+          "deaths": 8,
+          "assists": 7,
+          "damage": 3468,
+          "hs": 50
+        },
+        "Joker": {
+          "kills": 11,
+          "deaths": 8,
+          "assists": 1,
+          "damage": 2818,
+          "hs": 0
+        },
+        "Toxic Gruee": {
+          "kills": 4,
+          "deaths": 10,
+          "assists": 3,
+          "damage": 2406,
+          "hs": 50
+        }
+      },
+      "teamA": "Arupadai",
+      "teamB": "Conqueors",
+      "savedAt": "2026-03-09T14:33:08.192Z"
+    },
+    "5": {
+      "winner": "Conqueors",
+      "loser": "Warlords",
+      "rounds": 1,
+      "stats": {
+        "Saitama": {
+          "kills": 9,
+          "deaths": 9,
+          "assists": 3,
+          "damage": 4479,
+          "hs": 11.11
+        },
+        "shiva": {
+          "kills": 7,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 4202,
+          "hs": 42.86
+        },
+        "TG God": {
+          "kills": 11,
+          "deaths": 10,
+          "assists": 3,
+          "damage": 4387,
+          "hs": 27.27
+        },
+        "Sanji": {
+          "kills": 10,
+          "deaths": 9,
+          "assists": 3,
+          "damage": 4099,
+          "hs": 10
+        },
+        "Joker": {
+          "kills": 11,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 5264,
+          "hs": 27.27
+        },
+        "Toxic Gruee": {
+          "kills": 5,
+          "deaths": 9,
+          "assists": 7,
+          "damage": 3136,
+          "hs": 40
+        }
+      },
+      "teamA": "Warlords",
+      "teamB": "Conqueors",
+      "savedAt": "2026-03-09T14:35:43.273Z"
+    },
     "6": {
       "winner": "Arupadai",
       "loser": "Night Raiders",
@@ -292,6 +396,58 @@
       "teamA": "Arupadai",
       "teamB": "Warlords",
       "savedAt": "2026-03-09T08:09:33.991Z"
+    },
+    "10": {
+      "winner": "Arupadai",
+      "loser": "Conqueors",
+      "rounds": 5,
+      "stats": {
+        "Sanji": {
+          "kills": 1,
+          "deaths": 9,
+          "assists": 5,
+          "damage": 2646,
+          "hs": 0
+        },
+        "Joker": {
+          "kills": 6,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 2649,
+          "hs": 16.67
+        },
+        "Toxic Gruee": {
+          "kills": 6,
+          "deaths": 8,
+          "assists": 0,
+          "damage": 2654,
+          "hs": 50
+        },
+        "Rolex": {
+          "kills": 11,
+          "deaths": 4,
+          "assists": 3,
+          "damage": 5145,
+          "hs": 36.36
+        },
+        "Sura": {
+          "kills": 7,
+          "deaths": 5,
+          "assists": 5,
+          "damage": 2185,
+          "hs": 0
+        },
+        "Danvishnu": {
+          "kills": 8,
+          "deaths": 4,
+          "assists": 6,
+          "damage": 3201,
+          "hs": 25
+        }
+      },
+      "teamA": "Conqueors",
+      "teamB": "Arupadai",
+      "savedAt": "2026-03-09T14:38:44.940Z"
     }
   },
   "playoffs": {},
