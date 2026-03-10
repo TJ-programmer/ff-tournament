@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-09T15:45:47.552Z",
+  "exportedAt": "2026-03-10T06:39:34.342Z",
   "teams": {
     "Warlords": [
       "Saitama",
@@ -552,6 +552,58 @@
       "teamA": "Conqueors",
       "teamB": "Arupadai",
       "savedAt": "2026-03-09T14:38:44.940Z"
+    },
+    "12": {
+      "winner": "Arupadai",
+      "loser": "Night Raiders",
+      "rounds": 1,
+      "stats": {
+        "Rolex": {
+          "kills": 9,
+          "deaths": 1,
+          "assists": 4,
+          "damage": 3089,
+          "hs": 11.11
+        },
+        "Sura": {
+          "kills": 5,
+          "deaths": 2,
+          "assists": 8,
+          "damage": 2355,
+          "hs": 0
+        },
+        "Danvishnu": {
+          "kills": 9,
+          "deaths": 2,
+          "assists": 4,
+          "damage": 2819,
+          "hs": 0
+        },
+        "inox": {
+          "kills": 1,
+          "deaths": 8,
+          "assists": 1,
+          "damage": 1091,
+          "hs": 100
+        },
+        "orton": {
+          "kills": 1,
+          "deaths": 8,
+          "assists": 0,
+          "damage": 1301,
+          "hs": 0
+        },
+        "sneaky": {
+          "kills": 3,
+          "deaths": 8,
+          "assists": 0,
+          "damage": 1231,
+          "hs": 0
+        }
+      },
+      "teamA": "Arupadai",
+      "teamB": "Night Raiders",
+      "savedAt": "2026-03-10T06:39:30.083Z"
     }
   },
   "playoffs": {},
