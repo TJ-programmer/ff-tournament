@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-10T09:05:45.814Z",
+  "exportedAt": "2026-03-10T13:07:14.478Z",
   "teams": {
     "Warlords": [
       "Saitama",
@@ -710,6 +710,111 @@
       "savedAt": "2026-03-10T06:39:30.083Z"
     }
   },
-  "playoffs": {},
+  "playoffs": {
+    "q1": {
+      "winner": "Arupadai",
+      "loser": "Warlords",
+      "rounds": 1,
+      "stats": {
+        "Saitama": {
+          "kills": 10,
+          "deaths": 8,
+          "assists": 7,
+          "damage": 3974,
+          "hs": 20
+        },
+        "shiva": {
+          "kills": 9,
+          "deaths": 8,
+          "assists": 5,
+          "damage": 3792,
+          "hs": 33.33
+        },
+        "TG God": {
+          "kills": 7,
+          "deaths": 8,
+          "assists": 7,
+          "damage": 2973,
+          "hs": 57.14
+        },
+        "Rolex": {
+          "kills": 12,
+          "deaths": 9,
+          "assists": 4,
+          "damage": 4535,
+          "hs": 25
+        },
+        "Sura": {
+          "kills": 8,
+          "deaths": 8,
+          "assists": 4,
+          "damage": 3637,
+          "hs": 12.5
+        },
+        "Danvishnu": {
+          "kills": 3,
+          "deaths": 9,
+          "assists": 6,
+          "damage": 1325,
+          "hs": 0
+        }
+      },
+      "teamA": "Warlords",
+      "teamB": "Arupadai",
+      "savedAt": "2026-03-10T09:57:49.610Z"
+    },
+    "e1": {
+      "winner": "Conqueors",
+      "loser": "Night Raiders",
+      "rounds": 3,
+      "stats": {
+        "Sanji": {
+          "kills": 8,
+          "deaths": 7,
+          "assists": 6,
+          "damage": 3281,
+          "hs": 37.5
+        },
+        "Joker": {
+          "kills": 10,
+          "deaths": 6,
+          "assists": 4,
+          "damage": 3380,
+          "hs": 20
+        },
+        "Toxic Gruee": {
+          "kills": 8,
+          "deaths": 6,
+          "assists": 1,
+          "damage": 3628,
+          "hs": 25
+        },
+        "inox": {
+          "kills": 7,
+          "deaths": 9,
+          "assists": 5,
+          "damage": 3198,
+          "hs": 0
+        },
+        "orton": {
+          "kills": 7,
+          "deaths": 8,
+          "assists": 4,
+          "damage": 2965,
+          "hs": 0
+        },
+        "sneaky": {
+          "kills": 4,
+          "deaths": 9,
+          "assists": 3,
+          "damage": 2363,
+          "hs": 25
+        }
+      },
+      "teamA": "Conqueors",
+      "teamB": "Night Raiders",
+      "savedAt": "2026-03-10T13:06:56.690Z"
+    }
+  },
   "playoffsUnlocked": true
 }
