@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-10T06:39:34.342Z",
+  "exportedAt": "2026-03-10T08:04:59.153Z",
   "teams": {
     "Warlords": [
       "Saitama",
@@ -500,6 +500,58 @@
       "teamA": "Night Raiders",
       "teamB": "Conqueors",
       "savedAt": "2026-03-09T15:45:33.663Z"
+    },
+    "9": {
+      "winner": "Warlords",
+      "loser": "Night Raiders",
+      "rounds": 6,
+      "stats": {
+        "inox": {
+          "kills": 2,
+          "deaths": 9,
+          "assists": 1,
+          "damage": 936,
+          "hs": 50
+        },
+        "orton": {
+          "kills": 5,
+          "deaths": 8,
+          "assists": 0,
+          "damage": 2680,
+          "hs": 20
+        },
+        "sneaky": {
+          "kills": 5,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 2227,
+          "hs": 20
+        },
+        "Saitama": {
+          "kills": 10,
+          "deaths": 2,
+          "assists": 5,
+          "damage": 3644,
+          "hs": 20
+        },
+        "shiva": {
+          "kills": 7,
+          "deaths": 6,
+          "assists": 3,
+          "damage": 2722,
+          "hs": 0
+        },
+        "TG God": {
+          "kills": 6,
+          "deaths": 4,
+          "assists": 4,
+          "damage": 2302,
+          "hs": 66.67
+        }
+      },
+      "teamA": "Night Raiders",
+      "teamB": "Warlords",
+      "savedAt": "2026-03-10T08:04:54.971Z"
     },
     "10": {
       "winner": "Arupadai",
