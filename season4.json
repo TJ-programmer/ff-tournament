@@ -1,0 +1,90 @@
+{
+  "exportedAt": "2026-03-12T06:55:53.337Z",
+  "teams": {
+    "Destroyers": [
+      "Saitama",
+      "Inox",
+      "Toxic Grueee"
+    ],
+    "Alaravidum Ambalais": [
+      "Sanji",
+      "Joker",
+      "Danvishnu"
+    ],
+    "Defenders": [
+      "Shiva",
+      "Orton",
+      "Sura"
+    ],
+    "OG": [
+      "Rolex",
+      "TG God",
+      "Sneaky"
+    ]
+  },
+  "matches": [
+    {
+      "id": 1,
+      "teamA": "Destroyers",
+      "teamB": "OG"
+    },
+    {
+      "id": 2,
+      "teamA": "Alaravidum Ambalais",
+      "teamB": "Defenders"
+    },
+    {
+      "id": 3,
+      "teamA": "Destroyers",
+      "teamB": "Defenders"
+    },
+    {
+      "id": 4,
+      "teamA": "OG",
+      "teamB": "Alaravidum Ambalais"
+    },
+    {
+      "id": 5,
+      "teamA": "Destroyers",
+      "teamB": "Alaravidum Ambalais"
+    },
+    {
+      "id": 6,
+      "teamA": "Defenders",
+      "teamB": "OG"
+    },
+    {
+      "id": 7,
+      "teamA": "OG",
+      "teamB": "Destroyers"
+    },
+    {
+      "id": 8,
+      "teamA": "Defenders",
+      "teamB": "Alaravidum Ambalais"
+    },
+    {
+      "id": 9,
+      "teamA": "Defenders",
+      "teamB": "Destroyers"
+    },
+    {
+      "id": 10,
+      "teamA": "Alaravidum Ambalais",
+      "teamB": "OG"
+    },
+    {
+      "id": 11,
+      "teamA": "Alaravidum Ambalais",
+      "teamB": "Destroyers"
+    },
+    {
+      "id": 12,
+      "teamA": "OG",
+      "teamB": "Defenders"
+    }
+  ],
+  "results": {},
+  "playoffs": {},
+  "playoffsUnlocked": false
+}
