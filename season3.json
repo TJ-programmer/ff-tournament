@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-10T13:07:14.478Z",
+  "exportedAt": "2026-03-12T04:02:20.217Z",
   "teams": {
     "Warlords": [
       "Saitama",
@@ -814,6 +814,58 @@
       "teamA": "Conqueors",
       "teamB": "Night Raiders",
       "savedAt": "2026-03-10T13:06:56.690Z"
+    },
+    "e2": {
+      "winner": "Warlords",
+      "loser": "Conqueors",
+      "rounds": 0,
+      "stats": {
+        "Saitama": {
+          "kills": 11,
+          "deaths": 6,
+          "assists": 4,
+          "damage": 3330,
+          "hs": 27.27
+        },
+        "shiva": {
+          "kills": 4,
+          "deaths": 7,
+          "assists": 3,
+          "damage": 3338,
+          "hs": 50
+        },
+        "TG God": {
+          "kills": 10,
+          "deaths": 6,
+          "assists": 7,
+          "damage": 3553,
+          "hs": 30
+        },
+        "Sanji": {
+          "kills": 5,
+          "deaths": 9,
+          "assists": 4,
+          "damage": 1659,
+          "hs": 0
+        },
+        "Joker": {
+          "kills": 11,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 4858,
+          "hs": 18.18
+        },
+        "Toxic Gruee": {
+          "kills": 2,
+          "deaths": 9,
+          "assists": 4,
+          "damage": 2774,
+          "hs": 0
+        }
+      },
+      "teamA": "Warlords",
+      "teamB": "Conqueors",
+      "savedAt": "2026-03-12T04:02:16.621Z"
     }
   },
   "playoffsUnlocked": true
