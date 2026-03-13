@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-12T06:57:49.935Z",
+  "exportedAt": "2026-03-13T08:24:34.134Z",
   "teams": {
     "warlords": [
       "Saitama",
@@ -84,7 +84,164 @@
       "teamB": "Dragons"
     }
   ],
-  "results": {},
+  "results": {
+    "1": {
+      "winner": "Arupadai",
+      "loser": "warlords",
+      "rounds": 4,
+      "stats": {
+        "Saitama": {
+          "kills": 4,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 2442,
+          "hs": 0
+        },
+        "orton": {
+          "kills": 6,
+          "deaths": 10,
+          "assists": 0,
+          "damage": 3256,
+          "hs": 16.67
+        },
+        "TG GOD": {
+          "kills": 4,
+          "deaths": 9,
+          "assists": 4,
+          "damage": 2104,
+          "hs": 50
+        },
+        "Rolex": {
+          "kills": 14,
+          "deaths": 4,
+          "assists": 6,
+          "damage": 5624,
+          "hs": 14.29
+        },
+        "sura": {
+          "kills": 7,
+          "deaths": 7,
+          "assists": 3,
+          "damage": 3465,
+          "hs": 0
+        },
+        "inox": {
+          "kills": 6,
+          "deaths": 5,
+          "assists": 7,
+          "damage": 1622,
+          "hs": 16.67
+        }
+      },
+      "teamA": "warlords",
+      "teamB": "Arupadai",
+      "savedAt": "2026-03-13T08:13:21.793Z"
+    },
+    "3": {
+      "winner": "warlords",
+      "loser": "Dragons",
+      "rounds": 0,
+      "stats": {
+        "Saitama": {
+          "kills": 14,
+          "deaths": 4,
+          "assists": 5,
+          "damage": 5349,
+          "hs": 7.14
+        },
+        "orton": {
+          "kills": 9,
+          "deaths": 7,
+          "assists": 4,
+          "damage": 3798,
+          "hs": 11.11
+        },
+        "TG GOD": {
+          "kills": 3,
+          "deaths": 9,
+          "assists": 6,
+          "damage": 2291,
+          "hs": 33.33
+        },
+        "Danvishnu": {
+          "kills": 2,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 1188,
+          "hs": 0
+        },
+        "Toxic gruee": {
+          "kills": 6,
+          "deaths": 9,
+          "assists": 0,
+          "damage": 2971,
+          "hs": 50
+        },
+        "nt joker": {
+          "kills": 12,
+          "deaths": 8,
+          "assists": 2,
+          "damage": 4537,
+          "hs": 33.33
+        }
+      },
+      "teamA": "warlords",
+      "teamB": "Dragons",
+      "savedAt": "2026-03-13T08:16:49.304Z"
+    },
+    "7": {
+      "winner": "Arupadai",
+      "loser": "warlords",
+      "rounds": 1,
+      "stats": {
+        "Rolex": {
+          "kills": 11,
+          "deaths": 9,
+          "assists": 5,
+          "damage": 4824,
+          "hs": 0
+        },
+        "sura": {
+          "kills": 13,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 4416,
+          "hs": 0
+        },
+        "inox": {
+          "kills": 8,
+          "deaths": 9,
+          "assists": 5,
+          "damage": 2645,
+          "hs": 0
+        },
+        "Saitama": {
+          "kills": 12,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 4757,
+          "hs": 8.33
+        },
+        "orton": {
+          "kills": 4,
+          "deaths": 11,
+          "assists": 6,
+          "damage": 2761,
+          "hs": 0
+        },
+        "TG GOD": {
+          "kills": 8,
+          "deaths": 13,
+          "assists": 2,
+          "damage": 2875,
+          "hs": 0
+        }
+      },
+      "teamA": "Arupadai",
+      "teamB": "warlords",
+      "savedAt": "2026-03-13T08:24:29.482Z"
+    }
+  },
   "playoffs": {},
   "playoffsUnlocked": false
 }
