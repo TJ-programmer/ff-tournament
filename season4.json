@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-25T07:45:25.684Z",
+  "exportedAt": "2026-03-25T17:04:06.434Z",
   "teams": {
     "warlords": [
       "Saitama",
@@ -656,8 +656,113 @@
       "teamA": "Alaravidum Ambalais",
       "teamB": "warlords",
       "savedAt": "2026-03-24T16:41:54.595Z"
+    },
+    "12": {
+      "winner": "Dragons",
+      "loser": "Arupadai",
+      "rounds": 3,
+      "stats": {
+        "Rolex": {
+          "kills": 11,
+          "deaths": 7,
+          "assists": 1,
+          "damage": 4524,
+          "hs": 9.09
+        },
+        "sura": {
+          "kills": 10,
+          "deaths": 6,
+          "assists": 2,
+          "damage": 3438,
+          "hs": 30
+        },
+        "inox": {
+          "kills": 4,
+          "deaths": 5,
+          "assists": 6,
+          "damage": 2804,
+          "hs": 0
+        },
+        "Danvishnu": {
+          "kills": 3,
+          "deaths": 10,
+          "assists": 1,
+          "damage": 1228,
+          "hs": 0
+        },
+        "Toxic gruee": {
+          "kills": 3,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 1416,
+          "hs": 0
+        },
+        "nt joker": {
+          "kills": 12,
+          "deaths": 9,
+          "assists": 1,
+          "damage": 4959,
+          "hs": 0
+        }
+      },
+      "teamA": "Arupadai",
+      "teamB": "Dragons",
+      "savedAt": "2026-03-25T17:00:58.169Z"
     }
   },
-  "playoffs": {},
-  "playoffsUnlocked": false
+  "playoffs": {
+    "e1": {
+      "winner": "warlords",
+      "loser": "Dragons",
+      "rounds": 2,
+      "stats": {
+        "Danvishnu": {
+          "kills": 8,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 2688,
+          "hs": 12.5
+        },
+        "Toxic gruee": {
+          "kills": 5,
+          "deaths": 9,
+          "assists": 4,
+          "damage": 3265,
+          "hs": 80
+        },
+        "nt joker": {
+          "kills": 10,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 4589,
+          "hs": 10
+        },
+        "Saitama": {
+          "kills": 10,
+          "deaths": 7,
+          "assists": 7,
+          "damage": 5705,
+          "hs": 20
+        },
+        "orton": {
+          "kills": 4,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 2064,
+          "hs": 25
+        },
+        "TG GOD": {
+          "kills": 11,
+          "deaths": 8,
+          "assists": 4,
+          "damage": 3566,
+          "hs": 0
+        }
+      },
+      "teamA": "Dragons",
+      "teamB": "warlords",
+      "savedAt": "2026-03-25T17:03:17.364Z"
+    }
+  },
+  "playoffsUnlocked": true
 }
