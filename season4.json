@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-25T17:04:06.434Z",
+  "exportedAt": "2026-03-25T17:06:29.259Z",
   "teams": {
     "warlords": [
       "Saitama",
@@ -658,8 +658,8 @@
       "savedAt": "2026-03-24T16:41:54.595Z"
     },
     "12": {
-      "winner": "Dragons",
-      "loser": "Arupadai",
+      "winner": "Arupadai",
+      "loser": "Dragons",
       "rounds": 3,
       "stats": {
         "Rolex": {
@@ -707,7 +707,7 @@
       },
       "teamA": "Arupadai",
       "teamB": "Dragons",
-      "savedAt": "2026-03-25T17:00:58.169Z"
+      "savedAt": "2026-03-25T17:06:19.903Z"
     }
   },
   "playoffs": {
