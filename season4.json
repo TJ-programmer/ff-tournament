@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-24T16:42:14.382Z",
+  "exportedAt": "2026-03-25T07:22:19.415Z",
   "teams": {
     "warlords": [
       "Saitama",
@@ -241,6 +241,58 @@
       "teamB": "Dragons",
       "savedAt": "2026-03-24T06:28:34.045Z"
     },
+    "4": {
+      "winner": "Arupadai",
+      "loser": "Alaravidum Ambalais",
+      "rounds": 7,
+      "stats": {
+        "Rolex": {
+          "kills": 11,
+          "deaths": 1,
+          "assists": 6,
+          "damage": 3264,
+          "hs": 9.09
+        },
+        "sura": {
+          "kills": 9,
+          "deaths": 2,
+          "assists": 4,
+          "damage": 2521,
+          "hs": 11.11
+        },
+        "inox": {
+          "kills": 4,
+          "deaths": 3,
+          "assists": 5,
+          "damage": 1484,
+          "hs": 0
+        },
+        "Sanji": {
+          "kills": 2,
+          "deaths": 8,
+          "assists": 2,
+          "damage": 2340,
+          "hs": 50
+        },
+        "sneaky": {
+          "kills": 2,
+          "deaths": 8,
+          "assists": 1,
+          "damage": 1915,
+          "hs": 50
+        },
+        "shiva": {
+          "kills": 2,
+          "deaths": 8,
+          "assists": 1,
+          "damage": 1875,
+          "hs": 50
+        }
+      },
+      "teamA": "Arupadai",
+      "teamB": "Alaravidum Ambalais",
+      "savedAt": "2026-03-25T07:18:50.037Z"
+    },
     "5": {
       "winner": "Alaravidum Ambalais",
       "loser": "warlords",
@@ -396,6 +448,110 @@
       "teamA": "Arupadai",
       "teamB": "warlords",
       "savedAt": "2026-03-13T08:24:29.482Z"
+    },
+    "8": {
+      "winner": "Alaravidum Ambalais",
+      "loser": "Dragons",
+      "rounds": 0,
+      "stats": {
+        "Danvishnu": {
+          "kills": 8,
+          "deaths": 9,
+          "assists": 1,
+          "damage": 3186,
+          "hs": 12.5
+        },
+        "Toxic gruee": {
+          "kills": 5,
+          "deaths": 9,
+          "assists": 1,
+          "damage": 2761,
+          "hs": 40
+        },
+        "nt joker": {
+          "kills": 1,
+          "deaths": 8,
+          "assists": 4,
+          "damage": 1377,
+          "hs": 0
+        },
+        "Sanji": {
+          "kills": 8,
+          "deaths": 4,
+          "assists": 7,
+          "damage": 2771,
+          "hs": 0
+        },
+        "sneaky": {
+          "kills": 8,
+          "deaths": 6,
+          "assists": 6,
+          "damage": 3792,
+          "hs": 12.5
+        },
+        "shiva": {
+          "kills": 10,
+          "deaths": 6,
+          "assists": 5,
+          "damage": 3797,
+          "hs": 10
+        }
+      },
+      "teamA": "Dragons",
+      "teamB": "Alaravidum Ambalais",
+      "savedAt": "2026-03-25T07:18:33.111Z"
+    },
+    "10": {
+      "winner": "Arupadai",
+      "loser": "Alaravidum Ambalais",
+      "rounds": 6,
+      "stats": {
+        "Sanji": {
+          "kills": 3,
+          "deaths": 8,
+          "assists": 2,
+          "damage": 1703,
+          "hs": 0
+        },
+        "sneaky": {
+          "kills": 2,
+          "deaths": 8,
+          "assists": 2,
+          "damage": 2116,
+          "hs": 100
+        },
+        "shiva": {
+          "kills": 4,
+          "deaths": 8,
+          "assists": 2,
+          "damage": 1715,
+          "hs": 25
+        },
+        "Rolex": {
+          "kills": 10,
+          "deaths": 4,
+          "assists": 3,
+          "damage": 3241,
+          "hs": 10
+        },
+        "sura": {
+          "kills": 7,
+          "deaths": 3,
+          "assists": 5,
+          "damage": 2317,
+          "hs": 14.29
+        },
+        "inox": {
+          "kills": 7,
+          "deaths": 2,
+          "assists": 4,
+          "damage": 2120,
+          "hs": 14.29
+        }
+      },
+      "teamA": "Alaravidum Ambalais",
+      "teamB": "Arupadai",
+      "savedAt": "2026-03-25T07:21:20.691Z"
     },
     "11": {
       "winner": "Alaravidum Ambalais",
