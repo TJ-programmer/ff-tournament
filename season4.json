@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-03-25T17:06:29.259Z",
+  "exportedAt": "2026-04-06T09:40:09.064Z",
   "teams": {
     "warlords": [
       "Saitama",
@@ -762,6 +762,110 @@
       "teamA": "Dragons",
       "teamB": "warlords",
       "savedAt": "2026-03-25T17:03:17.364Z"
+    },
+    "q1": {
+      "winner": "Arupadai",
+      "loser": "Alaravidum Ambalais",
+      "rounds": 7,
+      "stats": {
+        "Rolex": {
+          "kills": 9,
+          "deaths": 2,
+          "assists": 5,
+          "damage": 3760,
+          "hs": 22.22
+        },
+        "sura": {
+          "kills": 9,
+          "deaths": 2,
+          "assists": 4,
+          "damage": 2141,
+          "hs": 22.22
+        },
+        "inox": {
+          "kills": 8,
+          "deaths": 2,
+          "assists": 3,
+          "damage": 1829,
+          "hs": 0
+        },
+        "Sanji": {
+          "kills": 0,
+          "deaths": 9,
+          "assists": 1,
+          "damage": 1028,
+          "hs": 0
+        },
+        "sneaky": {
+          "kills": 5,
+          "deaths": 9,
+          "assists": 0,
+          "damage": 1883,
+          "hs": 0
+        },
+        "shiva": {
+          "kills": 1,
+          "deaths": 8,
+          "assists": 3,
+          "damage": 2244,
+          "hs": 100
+        }
+      },
+      "teamA": "Arupadai",
+      "teamB": "Alaravidum Ambalais",
+      "savedAt": "2026-04-06T09:37:21.373Z"
+    },
+    "e2": {
+      "winner": "warlords",
+      "loser": "Alaravidum Ambalais",
+      "rounds": 2,
+      "stats": {
+        "Sanji": {
+          "kills": 11,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 4762,
+          "hs": 36.36
+        },
+        "sneaky": {
+          "kills": 4,
+          "deaths": 10,
+          "assists": 6,
+          "damage": 1745,
+          "hs": 0
+        },
+        "shiva": {
+          "kills": 7,
+          "deaths": 8,
+          "assists": 2,
+          "damage": 2944,
+          "hs": 0
+        },
+        "Saitama": {
+          "kills": 7,
+          "deaths": 8,
+          "assists": 6,
+          "damage": 4521,
+          "hs": 28.57
+        },
+        "orton": {
+          "kills": 15,
+          "deaths": 6,
+          "assists": 2,
+          "damage": 3964,
+          "hs": 13.33
+        },
+        "TG GOD": {
+          "kills": 3,
+          "deaths": 8,
+          "assists": 4,
+          "damage": 1395,
+          "hs": 0
+        }
+      },
+      "teamA": "Alaravidum Ambalais",
+      "teamB": "warlords",
+      "savedAt": "2026-04-06T09:40:05.292Z"
     }
   },
   "playoffsUnlocked": true
