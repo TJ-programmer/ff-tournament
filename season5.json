@@ -1,0 +1,90 @@
+{
+  "exportedAt": "2026-04-09T08:51:08.161Z",
+  "teams": {
+    "Titans": [
+      "Saitama",
+      "Sanji",
+      "DanVishnu"
+    ],
+    "Challengers": [
+      "Sneaky",
+      "Joker",
+      "Toxic gruee"
+    ],
+    "Arupadai": [
+      "Rolex",
+      "Orton",
+      "Veera"
+    ],
+    "Panther": [
+      "Shiva",
+      "TG God",
+      "Sura"
+    ]
+  },
+  "matches": [
+    {
+      "id": 1,
+      "teamA": "Titans",
+      "teamB": "Panther"
+    },
+    {
+      "id": 2,
+      "teamA": "Challengers",
+      "teamB": "Arupadai"
+    },
+    {
+      "id": 3,
+      "teamA": "Titans",
+      "teamB": "Arupadai"
+    },
+    {
+      "id": 4,
+      "teamA": "Panther",
+      "teamB": "Challengers"
+    },
+    {
+      "id": 5,
+      "teamA": "Titans",
+      "teamB": "Challengers"
+    },
+    {
+      "id": 6,
+      "teamA": "Arupadai",
+      "teamB": "Panther"
+    },
+    {
+      "id": 7,
+      "teamA": "Panther",
+      "teamB": "Titans"
+    },
+    {
+      "id": 8,
+      "teamA": "Arupadai",
+      "teamB": "Challengers"
+    },
+    {
+      "id": 9,
+      "teamA": "Arupadai",
+      "teamB": "Titans"
+    },
+    {
+      "id": 10,
+      "teamA": "Challengers",
+      "teamB": "Panther"
+    },
+    {
+      "id": 11,
+      "teamA": "Challengers",
+      "teamB": "Titans"
+    },
+    {
+      "id": 12,
+      "teamA": "Panther",
+      "teamB": "Arupadai"
+    }
+  ],
+  "results": {},
+  "playoffs": {},
+  "playoffsUnlocked": false
+}
