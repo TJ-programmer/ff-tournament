@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-04-09T08:51:08.161Z",
+  "exportedAt": "2026-04-10T13:33:23.182Z",
   "teams": {
     "Titans": [
       "Saitama",
@@ -84,7 +84,112 @@
       "teamB": "Arupadai"
     }
   ],
-  "results": {},
+  "results": {
+    "1": {
+      "winner": "Titans",
+      "loser": "Panther",
+      "rounds": 3,
+      "stats": {
+        "Saitama": {
+          "kills": 9,
+          "deaths": 5,
+          "assists": 5,
+          "damage": 3298,
+          "hs": 33.33
+        },
+        "Sanji": {
+          "kills": 8,
+          "deaths": 6,
+          "assists": 2,
+          "damage": 4341,
+          "hs": 37.5
+        },
+        "DanVishnu": {
+          "kills": 8,
+          "deaths": 6,
+          "assists": 4,
+          "damage": 3067,
+          "hs": 24.9
+        },
+        "Shiva": {
+          "kills": 7,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 3229,
+          "hs": 28.57
+        },
+        "TG God": {
+          "kills": 1,
+          "deaths": 9,
+          "assists": 4,
+          "damage": 1491,
+          "hs": 0
+        },
+        "Sura": {
+          "kills": 8,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 3662,
+          "hs": 12.5
+        }
+      },
+      "teamA": "Titans",
+      "teamB": "Panther",
+      "savedAt": "2026-04-10T13:29:02.403Z"
+    },
+    "3": {
+      "winner": "Arupadai",
+      "loser": "Titans",
+      "rounds": 1,
+      "stats": {
+        "Saitama": {
+          "kills": 9,
+          "deaths": 9,
+          "assists": 6,
+          "damage": 4995,
+          "hs": 22.22
+        },
+        "Sanji": {
+          "kills": 8,
+          "deaths": 9,
+          "assists": 4,
+          "damage": 4481,
+          "hs": 12.4
+        },
+        "DanVishnu": {
+          "kills": 9,
+          "deaths": 10,
+          "assists": 5,
+          "damage": 3089,
+          "hs": 11.11
+        },
+        "Rolex": {
+          "kills": 16,
+          "deaths": 9,
+          "assists": 2,
+          "damage": 5748,
+          "hs": 12.5
+        },
+        "Orton": {
+          "kills": 5,
+          "deaths": 9,
+          "assists": 4,
+          "damage": 2748,
+          "hs": 0
+        },
+        "Veera": {
+          "kills": 6,
+          "deaths": 8,
+          "assists": 2,
+          "damage": 3097,
+          "hs": 0
+        }
+      },
+      "teamA": "Titans",
+      "teamB": "Arupadai",
+      "savedAt": "2026-04-10T13:33:21.490Z"
+    }
+  },
   "playoffs": {},
   "playoffsUnlocked": false
 }
