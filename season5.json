@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-04-13T07:54:03.307Z",
+  "exportedAt": "2026-04-13T16:49:10.243Z",
   "teams": {
     "Titans": [
       "Saitama",
@@ -240,6 +240,58 @@
       "teamA": "Titans",
       "teamB": "Arupadai",
       "savedAt": "2026-04-10T13:33:21.490Z"
+    },
+    "6": {
+      "winner": "Arupadai",
+      "loser": "Panther",
+      "rounds": 1,
+      "stats": {
+        "Rolex": {
+          "kills": 15,
+          "deaths": 9,
+          "assists": 5,
+          "damage": 5983,
+          "hs": 13.33
+        },
+        "Orton": {
+          "kills": 5,
+          "deaths": 9,
+          "assists": 6,
+          "damage": 2690,
+          "hs": 0
+        },
+        "Veera": {
+          "kills": 8,
+          "deaths": 7,
+          "assists": 4,
+          "damage": 2657,
+          "hs": 25
+        },
+        "Shiva": {
+          "kills": 10,
+          "deaths": 10,
+          "assists": 2,
+          "damage": 4793,
+          "hs": 20
+        },
+        "TG God": {
+          "kills": 4,
+          "deaths": 11,
+          "assists": 5,
+          "damage": 3094,
+          "hs": 25
+        },
+        "Sura": {
+          "kills": 8,
+          "deaths": 10,
+          "assists": 2,
+          "damage": 3176,
+          "hs": 0
+        }
+      },
+      "teamA": "Arupadai",
+      "teamB": "Panther",
+      "savedAt": "2026-04-13T16:48:35.737Z"
     }
   },
   "playoffs": {},
