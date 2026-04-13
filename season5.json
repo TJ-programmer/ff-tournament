@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-04-10T13:33:23.182Z",
+  "exportedAt": "2026-04-13T07:54:03.307Z",
   "teams": {
     "Titans": [
       "Saitama",
@@ -136,6 +136,58 @@
       "teamA": "Titans",
       "teamB": "Panther",
       "savedAt": "2026-04-10T13:29:02.403Z"
+    },
+    "2": {
+      "winner": "Arupadai",
+      "loser": "Challengers",
+      "rounds": 4,
+      "stats": {
+        "Sneaky": {
+          "kills": 5,
+          "deaths": 10,
+          "assists": 2,
+          "damage": 1982,
+          "hs": 20
+        },
+        "Joker": {
+          "kills": 7,
+          "deaths": 9,
+          "assists": 4,
+          "damage": 3590,
+          "hs": 0
+        },
+        "Toxic gruee": {
+          "kills": 5,
+          "deaths": 10,
+          "assists": 2,
+          "damage": 2319,
+          "hs": 40
+        },
+        "Rolex": {
+          "kills": 13,
+          "deaths": 8,
+          "assists": 2,
+          "damage": 5431,
+          "hs": 38.46
+        },
+        "Orton": {
+          "kills": 9,
+          "deaths": 4,
+          "assists": 7,
+          "damage": 3257,
+          "hs": 11.11
+        },
+        "Veera": {
+          "kills": 7,
+          "deaths": 5,
+          "assists": 7,
+          "damage": 2904,
+          "hs": 0
+        }
+      },
+      "teamA": "Challengers",
+      "teamB": "Arupadai",
+      "savedAt": "2026-04-13T07:53:59.680Z"
     },
     "3": {
       "winner": "Arupadai",
